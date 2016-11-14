@@ -8,7 +8,8 @@ $('#fpSignIN').on('click', function()
     {
       var credentials ={
           username: $username.val(),
-            password:$password.val(),            
+            password:$password.val(), 
+          //more stuff here
     };
     
     //Ajax call to the backend API

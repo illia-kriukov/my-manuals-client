@@ -20,3 +20,24 @@
 
 
 
+
+
+
+#fpLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fpCopyright {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
