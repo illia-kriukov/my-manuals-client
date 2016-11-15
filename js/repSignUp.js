@@ -1,36 +1,53 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
-var $fullname = $('#repFullName');
-var $email = $('#repEmail');
-var $password = $('#repPassword');
-var $masterEmail = $('#repMasterEmail');
-var $masterPassword = $('#repMasterPassword');
-
-$('#register-submit-btn').on('click', function () {
+(function ($) {
     "use strict";
-    var representative = {
-        fullname: $fullname.val(),
-        email: $email.val(),
-        password: $password.val(),
-        masterEmail: $masterEmail.val(),
-        masterPassword: $masterPassword.val()
-          //more stuff here
-    };
+    var $name = $('#repFullName');
+    var $email = $('#repEmail');
+    var $password = $('#repPassword');
+    var $companyEmail = $('#repMasterEmail');
+    var $companyPassword = $('#repMasterPassword');
+
+    $('#register-submit-btn').on('click', function () {
+        var representative = {
+            email: $email.val(),
+            password: $password.val(),
+            name: $name.val(),
+            companyEmail: $companyEmail.val(),
+            companyPassowrd: $companyPassword.val()
+        };
+    
+  
     
     //Ajax call to the backend API
-    $.ajax({
-        type: 'Post',
-        url: 'http://localhost:8080/representative',
-        data: representative,
-        headers: {
-            //This line throws an error, I am not sure how does the header should be presented
-            "Content-Type" : (representative.masterEmail + representative.masterPassword),
-            //This is for my part I will take it later
-            //"Authorization": "Basic " + btoa(representative.email + ":" + representative.password),
-       
+        $.ajax({
+            type: 'POST',
+        //dataType: 'jsonp',
+            url: 'http://localhost:8080/representative',
+            data: JSON.stringify(representative),
+//        data: JSON.stringify({ "email": $email,
+//            "password": $password,
+//            "name": $name,
+//            "companyEmail": $companyEmail,
+//            "companyPassword": $companyPassword }),
+//        data ={
+//        "email": $email,
+//        "password": $password,
+//        "name": $name,
+//        "companyEmail": $companyEmail,
+//        "companyPassword": $companyPassword
+//        
+//    },
+            contentType: "application/json",
+            success: function () {
+                alert(representative.name + "Was added");
+            },
             error: function () {
-                alert('Error pushing the representative');
+                alert("Error");
             }
         });
-});
+    });
+})(jQuery);
+ 
+ 

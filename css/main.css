@@ -1,26 +1,8 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   custom styles
    ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #fpLogo {
@@ -40,4 +22,25 @@ footer {
     margin-top: 10%;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+#repHeader {
+    text-align: center;
+}
+
+#repParagraph {
+    text-align: center;
+}
+
+#repLogo {
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+}
+
+#repFooter {
+   
+    margin-top: 30px;
 }
