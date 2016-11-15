@@ -1,12 +1,13 @@
+/*jslint browser: true*/
+/*global $, jQuery, alert*/
 //Send Post request to server with credentials 
-$(function()){
+
 var $username = $('#fpUsername');
 var $password = $('#fpPassword');
 
 //Mount the onclick Function of Signin  
-$('#fpSignIN').on('click', function()
-    {
-      var credentials ={
+$('#fpSignIN').on('click', function () {
+      var credentials = {
           username: $username.val(),
             password:$password.val(), 
           //more stuff here
@@ -25,4 +26,5 @@ $('#fpSignIN').on('click', function()
     
     
     });
-});
+
+

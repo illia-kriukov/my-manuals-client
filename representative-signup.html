@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -30,23 +30,23 @@
                     
                     <div class="form-group">
                         <label class="control-label visible-ie8 visible-ie9">Full Name</label>
-                        <input class="form-control placeholder-no-fix" type="text" required="required" placeholder="Full Name" name="fullname" id="fullname" />
+                        <input id="repFullName"class="form-control placeholder-no-fix" type="text" required="required" placeholder="Full Name" name="fullname" id="fullname" />
                     </div>
                     <div class="form-group">
                         <label class="control-label visible-ie8 visible-ie9">Email</label>
-                        <input class="form-control placeholder-no-fix" type="email" required="required" placeholder="Email" name="registeremail" id="registeremail" />
+                        <input id="repEmail"class="form-control placeholder-no-fix" type="email" required="required" placeholder="Email" name="registeremail"  />
                     </div>
                     <div class="form-group">
                         <label class="control-label visible-ie8 visible-ie9">Password</label>
-                        <input class="form-control placeholder-no-fix" type="text" required="required" placeholder="Password" name="password" id="password" />
+                        <input id="repPassword"class="form-control placeholder-no-fix" type="text" required="required" placeholder="Password" name="password"  />
                     </div>
                     <div class="form-group">                        
                         <label class="control-label visible-ie8 visible-ie9">Master Email</label>
-                        <input class="form-control placeholder-no-fix" type="email" required="required" placeholder="Master Email" name="masteremail" id="masteremail" />
+                        <input id="repMasterEmail" class="form-control placeholder-no-fix" type="email" required="required" placeholder="Master Email" name="masteremail"  />
                     </div>
                     <div class="form-group">
                         <label class="control-label visible-ie8 visible-ie9">Master Password</label>
-                        <input class="form-control placeholder-no-fix" type="text" required="required" placeholder="Master Password" name="masterpassword" id="masterpassword" />
+                        <input class="form-control placeholder-no-fix" type="text" required="required" placeholder="Master Password" name="masterpassword" id="repMasterPassword" />
                     </div>                  
                     <div class="form-actions">                       
                         <button type="submit" id="register-submit-btn" class="btn green btn-block uppercase">Sign Up</button>
@@ -60,8 +60,12 @@
 
     <div class="copyright hide"> 2016 © Team A. </div>
 
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/jquery.min.js" type="text/javascript"></script>    
     <script src="js/app.min.js" type="text/javascript"></script>
+    <script src="js/repSignUp.js"></script>
   
 </body>
 </html>
