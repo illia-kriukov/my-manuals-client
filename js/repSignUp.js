@@ -23,22 +23,9 @@
     //Ajax call to the backend API
         $.ajax({
             type: 'POST',
-        //dataType: 'jsonp',
+            dataType: 'json',
             url: 'http://localhost:8080/representative',
             data: JSON.stringify(representative),
-//        data: JSON.stringify({ "email": $email,
-//            "password": $password,
-//            "name": $name,
-//            "companyEmail": $companyEmail,
-//            "companyPassword": $companyPassword }),
-//        data ={
-//        "email": $email,
-//        "password": $password,
-//        "name": $name,
-//        "companyEmail": $companyEmail,
-//        "companyPassword": $companyPassword
-//        
-//    },
             contentType: "application/json",
             success: function () {
                 alert(representative.name + "Was added");
