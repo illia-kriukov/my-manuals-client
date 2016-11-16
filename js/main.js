@@ -7,24 +7,37 @@ var $password = $('#fpPassword');
 
 //Mount the onclick Function of Signin  
 $('#fpSignIN').on('click', function () {
-      var credentials = {
-          username: $username.val(),
-            password:$password.val(), 
-          //more stuff here
-    };
+    "use strict";
+    var credentials = {
+            username: $username.val(),
+            password: $password.val(),
+            grant_type: "password",
+            scope: "mymanuals",
+            client_id: "clientapp"
+        };
     
     //Ajax call to the backend API
-    $.ajax
-    ({
-    type:'Post',
-    url:'', //Ask illia for the url
-    data:credentials,
-        error: function(){
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/oauth/token',
+        
+        headers: {
+            "Accept":"application/json",
+            "Authorization": "Basic " + btoa(credentials.username + ":" + credentials.password)
+                 },
+        dataType: 'json',
+        data: JSON.stringify(credentials),
+        error: function () {
             alert('Error pushing the credentials');
         }
     });
     
+    //Include the token for future calls.
+    // beforeSend : function( xhr ) {
+      //  xhr.setRequestHeader( "Authorization", "BEARER " + access_token );
+    //},
     
-    });
+    
+});
 
 
