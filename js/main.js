@@ -5,36 +5,39 @@ $(document).ready(function () {
     "use strict";
     var $username = $('#fpUsername');
     var $password = $('#fpPassword');
+    var $scope = "mymanuals";
+    var $grant_type = "password";
+    var $client_id = "mymanuals";
+    var $secret = "secret";
 
-//Mount the onclick Function of Signin  
+    //Mount the onclick Function of Signin
     $('#fpSignIN').on('click', function () {
-    
-        var credentials = {
-            username: $username.val(),
-            password: $password.val(),
-            grant_type: "password",
-            scope: "mymanuals",
-            client_id: "clientapp",
-        };
-    
-    //Ajax call to the backend API
+        event.preventDefault();
+        var credentials = new FormData();
+        credentials.append( 'username', $username.val() );
+        credentials.append( 'password', $password.val() );
+        credentials.append( 'scope', $scope );
+        credentials.append( 'grant_type', $grant_type );
+
+        //Ajax call to the backend API
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8080/oauth/token',
             crossOrigin: true,
             cache: false,
-            header: ('Access-Control-Allow-Origin: *'),
-//            beforeSend: function (xhr) {
-//                xhr.setRequestHeader("Authorization", "Basic " + btoa(credentials.username + ":" + credentials.password));
-//            },
             headers: {
                 "Accept": "application/json",
-                "Authorization": "Basic " + btoa($username + ":" + $password)
+                "Authorization": "Basic " + btoa($client_id + ":" + $secret)
             },
             dataType: 'json',
-            data: JSON.stringify(credentials),
+            data: credentials,
+            processData: false,
+            contentType: false,
+            success: function () {
+                // TODO Parse response and save token
+            },
             error: function () {
-                alert('Error pushing the credentials' + JSON.stringify(credentials));
+                alert('Error pushing the credentials!');
             }
         });
     
