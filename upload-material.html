@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>My manuals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="repHeader">Upload Product </h1>
+            <p id="repParagraph">Please use this form to upload material.</p>
+        </div>
+    </div>
+    <div id="myForm" class="col-md-4 col-lg-offset-4">
+        <!-- BEGIN REGISTRATION FORM -->
+        <form class="register-form" id="registform">            
+            <div class="form-group">
+                <label>Product Name <span style="color:red">*</span></label>
+                <input id="ProductName" name="ProductName" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Product Name" />
+            </div>
+            <div class="form-group">
+                <label>Model Number <span style="color:red">*</span></label>
+                <input id="ModelNumber" name="ModelNumber" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Model Number" />
+            </div>
+            <div class="form-group">
+                <label>Categories <span style="color:red">*</span></label>
+                <input id="category" name="category" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Category" />
+            </div>
+            <div class="form-group">
+                <label>Video</label>
+                <input id="video" name="video" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Video Link" />
+            </div>
+            <div class="form-group">
+                <label>File <span style="color:red">*</span></label>
+                <input id="file" name="file" class="placeholder-no-fix" type="file" required="required" placeholder="Upload File" />
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="submit-btn" class="btn green btn-block uppercase">Submit</button>
+            </div>
+        </form>
+        <!-- END REGISTRATION FORM -->
+    </div>
+    <!-- JS files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/repSignUp.js"></script>
+</body>
+</html>
