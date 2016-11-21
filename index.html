@@ -49,8 +49,18 @@
             <div class="form-group">
               <input id="fpPassword" type="password" placeholder="Password" class="form-control">
             </div>
-            <button id="fpSignIN" type="submit" class="btn btn-success">Sign in</button>
+            <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
              <button type="submit" class="btn btn-primary">Register</button>
+              
+              <div id="Cred" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div id="ErrorHeader" class="modal-header"> <h2>Problem</h2></div>
+                      <div id="ErrorBody"class="modal-body"> <h3>Username and Password do not match</h3></div>
+             
+                  </div>
+                  </div>
+              </div>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
