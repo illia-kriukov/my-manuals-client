@@ -34,13 +34,20 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (response) {
-             
-                window.sessionStorage.accessToken = response.access_token;
+               
+                window.localStorage.setItem('access_token', response.access_token);
+                // Imran retrieve the token by calling 
+                // window.localStorage.getItem('access_token').
+               
+                window.location.href = "upload-material.html";
+               
+               
+                
+
 
             },
 
             error: function () {
-                alert('Error pushing the credentials!');
             }
         });
     
