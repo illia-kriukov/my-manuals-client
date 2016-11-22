@@ -2,6 +2,17 @@
 /*global $, jQuery, alert*/
 //Send Post request to server with credentials 
 $(document).ready(function () {
+    $("#close").click(function(){
+            
+                $("#popBackground").fadeOut();
+                $("#popBox").fadeOut();
+        });
+      $("#popBackground").click(function(){
+            
+                $("#popBackground").fadeOut();
+                $("#popBox").fadeOut();
+        });
+    
     "use strict";
     var $username = $('#fpUsername');
     var $password = $('#fpPassword');
@@ -48,7 +59,11 @@ $(document).ready(function () {
             },
 
             error: function () {
+                $("#popBackground").fadeIn();
+                $("#popBox").fadeIn();
+                return false;
             }
+            
         });
     
     

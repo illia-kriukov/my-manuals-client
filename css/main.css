@@ -68,3 +68,78 @@ footer {
     color: white;
     text-align: center;
 }
+
+#ErrorHeader {
+        text-align: center;
+  
+}
+
+#ErrorBody {
+      text-align: center;
+}
+
+#popBackground {
+    position: fixed;
+    width: 100%;
+    height: 900px;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.8;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+
+#popBox {
+    width 30%;
+    position: absolute;
+    background:brown;
+    left: 50%;
+    margin-top: 100px;
+    padding: 20px;
+    z-index: 1500;
+    display: none;
+      border-radius: 10px 10px 10px 10px;
+
+}
+
+#close {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid ghostwhite;
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+    float: right;
+        color: ghostwhite;
+
+    
+}
+
+#errorText {
+   
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    float: left;
+    margin-right: 20px;
+    color: ghostwhite;
+}
+
+#errorLine {
+    margin-top: 30px;
+}
+
+#errorType {
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    float: left;
+    margin-right: 20px;
+        color: ghostwhite;
+
+}
+
+

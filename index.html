@@ -30,6 +30,14 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+          <div id="popBackground"></div>
+              <div id="popBox">
+                  <span id="errorType">Ooops,something wasn't right</span>
+                  <span id="close">&times;</span> 
+                  <hr id="errorLine">
+                  <span id="errorText">Your username and password do not match.</span>
+                  
+        </div>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -49,8 +57,11 @@
             <div class="form-group">
               <input id="fpPassword" type="password" placeholder="Password" class="form-control">
             </div>
-            <button id="fpSignIN" type="submit" class="btn btn-success">Sign in</button>
+            
+            <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
              <button type="submit" class="btn btn-primary">Register</button>
+              
+
           </form>
         </div><!--/.navbar-collapse -->
       </div>

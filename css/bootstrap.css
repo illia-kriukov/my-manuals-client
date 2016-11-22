@@ -2433,6 +2433,7 @@ input[type="search"] {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+padding-left: 10px;
 }
 .radio label,
 .checkbox label {
@@ -5492,6 +5493,7 @@ button.close {
       -ms-transform: translate(0, -25%);
        -o-transform: translate(0, -25%);
           transform: translate(0, -25%);
+  
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
@@ -5539,6 +5541,7 @@ button.close {
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  
 }
 .modal-header .close {
   margin-top: -2px;
