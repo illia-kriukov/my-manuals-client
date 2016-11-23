@@ -2,15 +2,12 @@
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
-
     "use strict";
     var $name = $('#ProductName');
     var $model = $('#ModelNumber');
     var $category = $('#category');
     var $video = $('#video');
-  
 
-    
     $('#submit-btn-prod').on('click', function () {
         event.preventDefault();
         var product = new FormData();
@@ -38,10 +35,5 @@ $(document).ready(function () {
             processData: false,
             contentType: false
         });
-        
     });
- 
-
-
 });
- 

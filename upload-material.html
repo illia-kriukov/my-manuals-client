@@ -17,8 +17,8 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-            <h1 id="repHeader">Upload Product </h1>
-            <p id="repParagraph">Please use this form to upload material.</p>
+            <h1 id="repHeader">New Product </h1>
+            <p id="repParagraph">Please use this form to create new product.</p>
         </div>
     </div>
     <div id="myForm" class="col-md-4 col-lg-offset-4">
@@ -32,27 +32,21 @@
                 <label>Model Number <span style="color:red">*</span></label>
                 <input id="ModelNumber" name="ModelNumber" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Model Number" />
             </div>
-            
-        
             <div class="form-group">
-                <label>Select up to 3 Categories <span style="color:red">*</span></label>
-                
-                <select class="selectpicker"  multiple data-max-options="3">
-                
-                </select>
-
-
+                <label>Categories <span style="color:red">*</span></label>
+                <br>
+                <select id="category" class="selectpicker" data-width="100%"  multiple data-max-options="3"></select>
             </div>
             <div class="form-group">
                 <label>Video</label>
                 <input id="video" name="video" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Video Link" />
             </div>
             <div class="form-group">
-                <label>File <span style="color:red">*</span></label>
+                <label>Manual <span style="color:red">*</span></label>
                 <input id="file" name="file" class="placeholder-no-fix" type="file" required="required" placeholder="Upload File" />
             </div>
             <div class="form-actions">
-                <button type="submit" id="submit-btn" class="btn green btn-block uppercase">Submit</button>
+                <button type="submit" id="submit-btn-prod" class="btn btn-success btn-block uppercase">Submit</button>
             </div>
         </form>
         <!-- END REGISTRATION FORM -->
@@ -64,7 +58,5 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/uploadMaterial.js"></script>
     <script src="js/productRequest.js"></script>
-     
-
 </body>
 </html>
