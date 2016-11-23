@@ -95,7 +95,8 @@ footer {
     width 30%;
     position: absolute;
     background:brown;
-    left: 50%;
+    left: 30%;
+    right: 30%;
     margin-top: 100px;
     padding: 20px;
     z-index: 1500;

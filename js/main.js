@@ -52,10 +52,7 @@ $(document).ready(function () {
                
                 window.location.href = "upload-material.html";
                
-               
-                
-
-
+    
             },
 
             error: function () {
