@@ -5541,7 +5541,12 @@ button.close {
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+<<<<<<< HEAD
   
+=======
+      text-align: center;
+    background-color: red;
+>>>>>>> 7d0beae5feb661acde270edcee4bea3447ae2206
 }
 .modal-header .close {
   margin-top: -2px;
