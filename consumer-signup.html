@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>My manuals :: Consumer SignUp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="repHeader">Consumer Registration </h1>
+            <p id="repParagraph">Please use this form to register as a consumer user.</p>
+
+        </div>
+    </div>
+
+    <div id="myForm" class="col-md-4 col-lg-offset-4">
+        <!-- BEGIN REGISTRATION FORM -->
+        <form id="consuperform" name="consuperform">
+            <div class="form-group">
+                <label>Full Name<span style="color:red">*</span></label>
+                <input id="consumerFullName" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Full Name" name="consumerFullName" />
+            </div>
+            <div class="form-group">
+                <label>Email<span style="color:red">*</span></label>
+                <input id="consumerEmail" class="form-control placeholder-no-fix" type="email" required="required" placeholder="Email" name="consumerEmail" />
+            </div>
+            <div class="form-group">
+                <label>Password<span style="color:red">*</span></label>
+                <input id="consumerPassword" class="form-control placeholder-no-fix" type="password" required="required" placeholder="Password" name="consumerPassword" />
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="registerbtn" class="btn btn-success btn-block uppercase">Register</button>
+            </div>
+        </form>
+        <!-- END REGISTRATION FORM -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/consumerSignUp.js"></script>
+</body>
+</html>
