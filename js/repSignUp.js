@@ -18,8 +18,8 @@ $(document).ready(function () {
             companyEmail: $companyEmail.val(),
             companyPassword: $companyPassword.val()
         };
-    
-    //Ajax call to the backend API
+
+        //Ajax call to the backend API
         $.ajax({
             type: 'POST',
             crossOrigin: true,
@@ -29,18 +29,17 @@ $(document).ready(function () {
             header: ('Access-Control-Allow-Origin: *'),
             data: JSON.stringify(representative),
             contentType: "application/json",
-            headers:{
+            headers: {
                 "Content-Type": "application/json "
             },
-            
+
             success: function () {
                 alert(representative.name + " Was added");
             },
-            error: function () { alert("Error"+ JSON.stringify(representative)); }
+            error: function () {
+                alert("Error" + JSON.stringify(representative));
+            }
         });
-        
+
     });
 });
- 
- 
- 

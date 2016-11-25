@@ -2,17 +2,17 @@
 /*global $, jQuery, alert*/
 //Send Post request to server with credentials 
 $(document).ready(function () {
-    $("#close").click(function(){
-            
-                $("#popBackground").fadeOut();
-                $("#popBox").fadeOut();
-        });
-      $("#popBackground").click(function(){
-            
-                $("#popBackground").fadeOut();
-                $("#popBox").fadeOut();
-        });
-    
+    $("#close").click(function () {
+
+        $("#popBackground").fadeOut();
+        $("#popBox").fadeOut();
+    });
+    $("#popBackground").click(function () {
+
+        $("#popBackground").fadeOut();
+        $("#popBox").fadeOut();
+    });
+
     "use strict";
     var $username = $('#fpUsername');
     var $password = $('#fpPassword');
@@ -25,10 +25,10 @@ $(document).ready(function () {
     $('#fpSignIN').on('click', function () {
         event.preventDefault();
         var credentials = new FormData();
-        credentials.append( 'username', $username.val() );
-        credentials.append( 'password', $password.val() );
-        credentials.append( 'scope', $scope );
-        credentials.append( 'grant_type', $grant_type );
+        credentials.append('username', $username.val());
+        credentials.append('password', $password.val());
+        credentials.append('scope', $scope);
+        credentials.append('grant_type', $grant_type);
 
         //Ajax call to the backend API
         $.ajax({
@@ -45,14 +45,11 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (response) {
-               
+
                 window.localStorage.setItem('access_token', response.access_token);
-                // Imran retrieve the token by calling 
-                // window.localStorage.getItem('access_token').
-               
                 window.location.href = "upload-material.html";
-               
-    
+
+
             },
 
             error: function () {
@@ -60,10 +57,10 @@ $(document).ready(function () {
                 $("#popBox").fadeIn();
                 return false;
             }
-            
+
         });
-    
-    
+
+
     });
 
 });
