@@ -2,6 +2,11 @@
 /*global $, jQuery, alert*/
 //Send Post request to server with credentials 
 $(document).ready(function () {
+    $('.dropdown').hover(function () { $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(); },
+            function () { $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(); });
+    $('.dropdown-menu').hover(function () { $(this).stop(true, true); },
+      function () { $(this).stop(true, true).delay(200).fadeOut(); }
+    );
     $("#close").click(function () {
 
         $("#popBackground").fadeOut();

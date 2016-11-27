@@ -1,5 +1,6 @@
 ﻿
 $(document).ready(function () {
+    $("#errordivs").hide();    
     "use strict";
     var $name = $('#consumerFullName');
     var $email = $('#consumerEmail');
@@ -29,7 +30,15 @@ $(document).ready(function () {
                 window.location.href = "index.html";              
             },
             error: function (xhr, status, error) {              
-                alert(xhr.responseText);
+                $("#errordivs").show();
+                //alert(xhr.responseText);                          
+                $("#errordivs").text(xhr.responseText);
+                $('#errordivs').delay(5000).fadeOut('slow');
+                $(function () {
+                    setTimeout(function () {
+                        $("#errordivs").hide('blind', {}, 500)
+                    }, 5000);
+                });
             }
         });
 
