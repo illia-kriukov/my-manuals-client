@@ -1,12 +1,13 @@
 ﻿
 $(document).ready(function () {
-    $("#errordivs").hide();    
+    $("#errordivs").hide();   
     "use strict";
     var $name = $('#consumerFullName');
     var $email = $('#consumerEmail');
     var $password = $('#consumerPassword'); 
 
-    $('#registerbtn').on('click', function () {        
+    $('#registerbtn').on('click', function () {
+        $("#errordivs").empty();
         //event.preventDefault();
         var consumer = {
             email: $email.val(),
@@ -29,19 +30,27 @@ $(document).ready(function () {
                 //alert(consumer.name + " Was added");
                 window.location.href = "index.html";              
             },
-            error: function (xhr, status, error) {              
-                $("#errordivs").show();
-                //alert(xhr.responseText);                          
-                $("#errordivs").text(xhr.responseText);
-                $('#errordivs').delay(5000).fadeOut('slow');
-                $(function () {
-                    setTimeout(function () {
-                        $("#errordivs").hide('blind', {}, 500)
-                    }, 5000);
-                });
+            error: function (xhr, status, error) {                            
+                var jsonResponseText = $.parseJSON(xhr.responseText);
+                var count = 0;
+                $.each(jsonResponseText, function (name, val) {                   
+                    if (name == "errors") {
+                        $('#errordivs').append('Validation error(s)');
+                        $.each(val, function (index, value) {
+                            count++;                           
+                            $('#errordivs').append('</br> ' + count + '. ' + value);
+                        });                                                                 
+                        $("#errordivs").show();
+                        $('#errordivs').delay(5000).fadeOut('slow');
+                        $(function () {
+                            setTimeout(function () {
+                                $("#errordivs").hide('blind', {}, 500)
+                            }, 5000);
+                        });
+                    }
+                });                                
             }
         });
-
     });
 });
 
