@@ -1,9 +1,11 @@
-﻿
+﻿/*jslint browser: true*/
+/*global $, jQuery, alert*/
+//Mount the onclick Function of Sign Up **consumers
 $(document).ready(function () {
     "use strict";
     var $name = $('#consumerFullName');
     var $email = $('#consumerEmail');
-    var $password = $('#consumerPassword'); 
+    var $password = $('#consumerPassword');
 
     $('#registerbtn').on('click', function () {
         event.preventDefault();
@@ -11,13 +13,14 @@ $(document).ready(function () {
         var consumer = {
             email: $email.val(),
             password: $password.val(),
-            name: $name.val()          
-        };      
+            name: $name.val()
+        };
+
         //Ajax call to the backend API
         $.ajax({
             type: 'POST',
             crossOrigin: true,
-            url: 'http://localhost:8080/consumer',            
+            url: 'http://localhost:8080/consumer',
             cache: false,
             header: ('Access-Control-Allow-Origin: *'),
             data: JSON.stringify(consumer),
@@ -27,18 +30,18 @@ $(document).ready(function () {
             },
             success: function (data) {
                 //alert(consumer.name + " Was added");
-                window.location.href = "index.html";              
+                window.location.href = "index.html";
             },
-            error: function (xhr, status, error) {                            
+            error: function (xhr, status, error) {
                 var jsonResponseText = $.parseJSON(xhr.responseText);
                 var count = 0;
-                $.each(jsonResponseText, function (name, val) {                   
+                $.each(jsonResponseText, function (name, val) {
                     if (name == "errors") {
                         $('#errordivs').append('Validation error(s)');
                         $.each(val, function (index, value) {
-                            count++;                           
+                            count++;
                             $('#errordivs').append('</br> ' + count + '. ' + value);
-                        });                                                                 
+                        });
                         $("#errordivs").show();
                         $('#errordivs').delay(5000).fadeOut('slow');
                         $(function () {
@@ -47,10 +50,8 @@ $(document).ready(function () {
                             }, 5000);
                         });
                     }
-                });                                
+                });
             }
         });
     });
 });
-
-

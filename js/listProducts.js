@@ -2,9 +2,7 @@
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
-
     "use strict";
-
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/products',
@@ -16,7 +14,6 @@ $(document).ready(function () {
         },
         success: function (response) {
             var tableBody = $('#TableBody');
-
             $.each(response, function (index, product) {
                 var tr = $('<tr/>');
                 tableBody.append(tr);
@@ -27,9 +24,7 @@ $(document).ready(function () {
                 $.each(product.categories, function (index1, category) {
                     var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
                 });
-
             });
-
         }
     });
 });

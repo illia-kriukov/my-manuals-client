@@ -40,6 +40,5 @@ $(document).ready(function () {
                 alert("Error" + JSON.stringify(representative));
             }
         });
-
     });
 });

@@ -3,15 +3,14 @@
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
     $("#close").click(function () {
-
         $("#popBackground").fadeOut();
         $("#popBox").fadeOut();
     });
     $("#popBackground").click(function () {
-
         $("#popBackground").fadeOut();
         $("#popBox").fadeOut();
     });
+
     "use strict";
     var $name = $('#ProductName');
     var $model = $('#ModelNumber');
@@ -41,17 +40,15 @@ $(document).ready(function () {
                 "Authorization": "Bearer " + window.localStorage.getItem('access_token')
             },
             //datatype json creates the crossorigin problem because of JSONP
-            //            dataType: 'json',
+            //dataType: 'json',
             data: product,
             processData: false,
             contentType: false,
             success: function () {
-
-                //          clear the form
+                // Clear the form
                 $('form :input').val('');
                 return true;
             },
-
 
             error: function (error) {
                 console.log(error);

@@ -10,17 +10,57 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
     </style>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">My Manuals</a>
+                <a class="navbar-brand" href="./products.html">Products</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <input id="fpUsername" type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input id="fpPassword" type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <span class="hidden-sm hidden-xs">Register&nbsp;</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
+                            <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+
     <div class="jumbotron">
         <div class="container">
             <h1 id="repHeader">Consumer Registration </h1>
             <p id="repParagraph">Please use this form to register as a consumer user.</p>
-
         </div>
     </div>
 
@@ -43,16 +83,17 @@
                 <input id="consumerPassword" class="form-control placeholder-no-fix" type="password" required="required" placeholder="Password" name="consumerPassword" />
             </div>
             <div class="form-actions">
-                <button type="submit" id="registerbtn" class="btn btn-success btn-block uppercase">Register</button>
+                <button type="submit" id="registerbtn" class="btn btn-success btn-block">Register</button>
             </div>
         </form>
         <!-- END REGISTRATION FORM -->
     </div>
+    <hr>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-
+    <script src="js/main.js"></script>
     <script src="js/consumerSignUp.js"></script>
 </body>
 </html>
