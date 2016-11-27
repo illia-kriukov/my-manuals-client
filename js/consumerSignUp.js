@@ -1,14 +1,13 @@
 ﻿
 $(document).ready(function () {
-    $("#errordivs").hide();   
     "use strict";
     var $name = $('#consumerFullName');
     var $email = $('#consumerEmail');
     var $password = $('#consumerPassword'); 
 
     $('#registerbtn').on('click', function () {
+        event.preventDefault();
         $("#errordivs").empty();
-        //event.preventDefault();
         var consumer = {
             email: $email.val(),
             password: $password.val(),
