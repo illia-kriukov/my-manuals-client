@@ -15,17 +15,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
 </head>
+
 <body>
-    <div id="popBackground"></div>
-    <div id="popBox">
-        <span id="errorType">Ooops,something wasn't right</span>
-        <span id="close">&times;</span>
-        <hr id="errorLine">
-        <span id="errorText">Your username and password do not match.</span>
-    </div>
+
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -33,37 +29,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html">My Manuals</a>
+                <a class="navbar-brand" href="./index.html">Home</a>
                 <a class="navbar-brand" href="./products.html">Products</a>
+
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right" role="form">
-                    <div class="form-group">
-                        <input id="fpUsername" type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input id="fpPassword" type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
-                    <div class="btn-group dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <span class="hidden-sm hidden-xs">Register&nbsp;</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
-                            <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
-                        </ul>
-                    </div>
+
+                    <button id="userLogout" type="submit" class="btn btn-default" data-toggle="modal" data-target="#Cred">Log out</button>
+
                 </form>
             </div>
+
             <!--/.navbar-collapse -->
         </div>
     </nav>
 
     <div class="jumbotron">
         <div class="container">
-            <h1 id="repHeader">New Product </h1>
+            <h1 id="GreetingsRep"></h1>
             <p id="repParagraph">Please use this form to create new product.</p>
         </div>
     </div>
@@ -104,10 +88,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+
     </script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/listCategories.js"></script>
     <script src="js/newProduct.js"></script>
+    <script src="js/userLogout.js"></script>
+    <script src="js/sessionHandle.js"></script>
 </body>
+
 </html>

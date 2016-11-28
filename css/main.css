@@ -1,83 +1,62 @@
-
-
 /* ==========================================================================
    custom styles
    ========================================================================== */
-
 
 #fpLogo {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 #fpCopyright {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    
 }
-
 footer {
     margin-top: 10%;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
 #repHeader {
     text-align: center;
 }
-
 #repParagraph {
     text-align: center;
 }
-
 #repLogo {
-    
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-
 }
-
 #formContainer {
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
 #myForm {
     float: none;
     margin-left: auto;
     margin-right: auto;
 }
-
 #repFooter {
     margin-top: 5%;
-  min-height: 50px;
+    min-height: 50px;
     background-color: #333333;
 }
-
 #repCopyright {
-   padding-top: 1%;
+    padding-top: 1%;
     padding-bottom: 1%;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
     color: white;
     text-align: center;
 }
-
 #ErrorHeader {
-        text-align: center;
-  
+    text-align: center;
 }
-
 #ErrorBody {
-      text-align: center;
+    text-align: center;
 }
-
 #popBackground {
     position: fixed;
     width: 100%;
@@ -90,19 +69,17 @@ footer {
     cursor: pointer;
     display: none;
 }
-
 #popBox {
     position: absolute;
-    background:brown;
+    background: brown;
     left: 30%;
     right: 30%;
     margin-top: 100px;
     padding: 20px;
     z-index: 1500;
     display: none;
-      border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
-
 #close {
     width: 25px;
     height: 25px;
@@ -112,13 +89,9 @@ footer {
     line-height: 25px;
     font-size: 25px;
     float: right;
-        color: ghostwhite;
-
-    
+    color: ghostwhite;
 }
-
 #errorText {
-   
     text-align: center;
     line-height: 30px;
     font-size: 18px;
@@ -126,21 +99,23 @@ footer {
     margin-right: 20px;
     color: ghostwhite;
 }
-
 #errorLine {
     margin-top: 30px;
 }
-
 #errorType {
     text-align: center;
     line-height: 30px;
     font-size: 30px;
     float: left;
     margin-right: 20px;
-        color: ghostwhite;
-
+    color: ghostwhite;
 }
-
 .ItemCategories {
     display: inline;
+}
+#GreetingsRep {
+    text-align: center;
+}
+#GreetingsUser {
+    text-align: center;
 }

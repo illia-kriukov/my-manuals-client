@@ -2,14 +2,49 @@
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
-    $("#close").click(function () {
-        $("#popBackground").fadeOut();
-        $("#popBox").fadeOut();
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/account/current/representative',
+        crossOrigin: true,
+        cache: false,
+        headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem('access_token')
+        },
+        success: function (response) {
+            console.log(response);
+            $("#GreetingsRep").html("Hello " + response.name);
+
+        }
+
+
     });
-    $("#popBackground").click(function () {
-        $("#popBackground").fadeOut();
-        $("#popBox").fadeOut();
+
+
+
+    //Ajax call to get user Name
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/account/current/representative',
+        crossOrigin: true,
+        cache: false,
+        headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem('access_token')
+        },
+        success: function (response) {
+
+            console.log(response);
+        }
+
+
     });
+
+
+
+
+
+
+
+
 
     "use strict";
     var $name = $('#ProductName');
@@ -29,7 +64,7 @@ $(document).ready(function () {
             product.append('file', file);
         });
 
-        //Ajax call to the backend API
+        //Ajax call to the backend API receive products
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8080/product',
