@@ -63,9 +63,10 @@ $(document).ready(function () {
             data: credentials,
             processData: false,
             contentType: false,
-            
+
             success: function (response) {
                 window.localStorage.setItem('access_token', response.access_token);
+
 
                 // Ajax call to get user role
                 $.ajax({
@@ -77,18 +78,13 @@ $(document).ready(function () {
                         "Authorization": "Bearer " + window.localStorage.getItem('access_token')
                     },
                     success: function (response) {
-//<<<<<<< HEAD
-//
-//=======
-//>>>>>>> c4d161440e98150afc70406bb8bf7f6589c53ff8
+
+                        window.localStorage.setItem('authority', response.authority);
                         if (response.authority == "ROLE_ADMIN") {
                             window.location.href = "new-product.html";
                         } else if (response.authority == "ROLE_USER") {
                             window.location.href = "consumer.html";
-//<<<<<<< HEAD
-//
-//=======
-//>>>>>>> c4d161440e98150afc70406bb8bf7f6589c53ff8
+
                         }
                     }
                 });

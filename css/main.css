@@ -125,3 +125,12 @@ color: azure;
 
 
 
+
+#UserExit {
+
+display: none;
+}
+
+#UserEnter {
+    display:none;
+}

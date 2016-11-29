@@ -8,16 +8,16 @@ $(document).ready(function () {
     var length = window.localStorage.length;
 
     if (length > 0) {
-
-        
-        $("#UserEnter").children().hide();
-        $("#UserExit").children().show();
+     
+        $("#UserEnter").hide();
+        $("#UserExit").show();
 
 
     } else if (length == 0) {
 
-        $("#UserEnter").children().show();
-        $("#UserExit").children().hide();
+
+        $("#UserEnter").show();
+        $("#UserExit").hide();
 
     }
 
