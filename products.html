@@ -54,8 +54,14 @@
                 <a class="navbar-brand" href="./index.html">Home</a>
                 <a class="navbar-brand" href="./products.html">Products</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right" role="form">
+           <div id="navbar" class="navbar-collapse collapse">
+                <form id="regForm" class="navbar-form navbar-right" role="form">
+
+                    <div id="UserExit">
+                      <a id="UserLink" href=""> <span id="GreetingsUser"></span></a> 
+                        <button id="userLogout" type="submit" class="btn btn-default" data-toggle="modal" data-target="#Cred">Log out</button>
+                    </div>
+                    <div id="UserEnter">
                     <div class="form-group">
                         <input id="fpUsername" type="text" placeholder="Email" class="form-control">
                     </div>
@@ -73,6 +79,7 @@
                             <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
                         </ul>
                     </div>
+                    </div>
                 </form>
             </div>
             <!--/.navbar-collapse -->
@@ -83,7 +90,7 @@
     <div class="jumbotron">
         <div class="container">
           <h1>Product List </h1>
-            <p>Hey stranger, this is the products listed in our website. Log in to save them to your account.</p>
+            <p>Browse through the products listed in our website. Log in to save them to your account.</p>
         </div>
     </div>
 
@@ -117,13 +124,18 @@
 
     <!-- JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
+-->
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/listProducts.js"></script>
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
     <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/sessionHandle.js"></script>
+     <script src="js/userInfo.js"></script>
+    
 </body>
 </html>

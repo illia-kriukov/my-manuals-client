@@ -2,47 +2,7 @@
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8080/account/current/representative',
-        crossOrigin: true,
-        cache: false,
-        headers: {
-            "Authorization": "Bearer " + window.localStorage.getItem('access_token')
-        },
-        success: function (response) {
-            console.log(response);
-            $("#GreetingsRep").html("Hello " + response.name);
-
-        }
-
-
-    });
-
-
-
-    //Ajax call to get user Name
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8080/account/current/representative',
-        crossOrigin: true,
-        cache: false,
-        headers: {
-            "Authorization": "Bearer " + window.localStorage.getItem('access_token')
-        },
-        success: function (response) {
-
-            console.log(response);
-        }
-
-
-    });
-
-
-
-
-
-
+ 
 
 
 

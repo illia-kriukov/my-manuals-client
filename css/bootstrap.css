@@ -243,6 +243,7 @@ th {
     background: #fff !important;
   }
   .navbar {
+      background-color: red;
     display: none;
   }
   .btn > .caret,
@@ -3849,6 +3850,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-header {
+      background-color: red;
     float: left;
   }
 }

@@ -1,4 +1,4 @@
-﻿/*jslint browser: true*/
+/*jslint browser: true*/
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **consumers
 $(document).ready(function () {
@@ -29,7 +29,7 @@ $(document).ready(function () {
                 "Content-Type": "application/json "
             },
             success: function (data) {
-                //alert(consumer.name + " Was added");
+             
                 window.location.href = "index.html";
             },
             error: function (xhr, status, error) {

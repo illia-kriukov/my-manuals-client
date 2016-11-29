@@ -24,7 +24,7 @@ $(document).ready(function () {
             type: 'POST',
             crossOrigin: true,
             url: 'http://localhost:8080/representative',
-            dataType: 'json',
+//            dataType: 'json',
             cache: false,
             header: ('Access-Control-Allow-Origin: *'),
             data: JSON.stringify(representative),
@@ -34,7 +34,8 @@ $(document).ready(function () {
             },
 
             success: function () {
-                alert(representative.name + " Was added");
+                console.log("rep added");
+                window.location.href = "index.html";
             },
             error: function () {
                 alert("Error" + JSON.stringify(representative));

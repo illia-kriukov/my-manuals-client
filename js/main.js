@@ -54,6 +54,7 @@ $(document).ready(function () {
             data: credentials,
             processData: false,
             contentType: false,
+            
             success: function (response) {
                 window.localStorage.setItem('access_token', response.access_token);
 
@@ -67,12 +68,12 @@ $(document).ready(function () {
                         "Authorization": "Bearer " + window.localStorage.getItem('access_token')
                     },
                     success: function (response) {
-                       
+
                         if (response.authority == "ROLE_ADMIN") {
                             window.location.href = "new-product.html";
-                        } else if(response.authority == "ROLE_USER") {
+                        } else if (response.authority == "ROLE_USER") {
                             window.location.href = "consumer.html";
-                            
+
                         }
                     }
 
