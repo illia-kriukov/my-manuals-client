@@ -2,9 +2,6 @@
 /*global $, jQuery, alert*/
 //Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
- 
-
-
 
     "use strict";
     var $name = $('#ProductName');
@@ -47,8 +44,6 @@ $(document).ready(function () {
 
             error: function (error) {
                 console.log(error);
-                $("#popBackground").fadeIn();
-                $("#popBox").fadeIn();
                 return false;
             }
         });

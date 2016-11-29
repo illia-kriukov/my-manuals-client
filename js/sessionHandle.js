@@ -8,7 +8,7 @@ $(document).ready(function () {
     var length = window.localStorage.length;
 
     if (length > 0) {
-     
+
         $("#UserEnter").hide();
         $("#UserExit").show();
 

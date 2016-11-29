@@ -120,7 +120,8 @@
 }
 #GreetingsUser {
   font-size: 18px;
-color: azure;
+color: #9d9d9d;
+    padding-right: 10px;
 }
 
 
