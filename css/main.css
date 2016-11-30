@@ -123,15 +123,13 @@
 color: #9d9d9d;
     padding-right: 10px;
 }
-
-
-
-
 #UserExit {
 
 display: none;
 }
-
 #UserEnter {
     display:none;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 16px;
 }

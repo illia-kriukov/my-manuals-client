@@ -37,7 +37,7 @@ $(document).ready(function () {
                 window.location.href = "index.html";
             },
             error: function () {
-//                alert("Error" + JSON.stringify(representative));
+                alert("Error" + JSON.stringify(representative));
             }
         });
     });

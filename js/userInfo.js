@@ -16,7 +16,7 @@ $(document).ready(function () {
             },
             success: function (response) {
 
-                $("#GreetingsUser").html("Hello, " + response.name);
+                $("#GreetingsUser").html(response.name);
 
             }
         });
@@ -34,7 +34,7 @@ $(document).ready(function () {
             },
             success: function (response) {
 
-                $("#GreetingsUser").html("Hello, " + response.name);
+                $("#GreetingsUser").html(response.name);
 
             }
         });
