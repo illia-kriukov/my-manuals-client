@@ -11,6 +11,7 @@ $(document).ready(function () {
 
     $('#submit-btn-prod').on('click', function () {
         event.preventDefault();
+        $("#errordivs").empty();
         var product = new FormData();
         product.append('name', $name.val());
         product.append('model', $model.val());
@@ -41,10 +42,25 @@ $(document).ready(function () {
                 $('form :input').val('');
                 return true;
             },
-
-            error: function (error) {
-                console.log(error);
-                return false;
+            error: function (xhr, status, error) {                
+                var jsonResponseText = $.parseJSON(xhr.responseText);
+                var count = 0;
+                $.each(jsonResponseText, function (name, val) {
+                    if (name == "errors") {
+                        $('#errordivs').append('Validation error(s)');
+                        $.each(val, function (index, value) {
+                            count++;
+                            $('#errordivs').append('</br> ' + count + '. ' + value);
+                        });
+                        $("#errordivs").show();
+                        $('#errordivs').delay(5000).fadeOut('slow');
+                        $(function () {
+                            setTimeout(function () {
+                                $("#errordivs").hide('blind', {}, 500)
+                            }, 5000);
+                        });
+                    }
+                });
             }
         });
     });

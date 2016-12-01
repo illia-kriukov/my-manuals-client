@@ -125,6 +125,7 @@
     padding-right: 10px;
 }
 #UserExit {
+
     display: none;
 }
 #UserEnter {
@@ -252,9 +253,11 @@ table#acrylic {
     margin-bottom: 20%;
 }
 
+
 #acrylic {
     display: none;
 }
+
 
 
 /*Pricing Tables Probably I will do it as a seperate CSS file*/
@@ -381,4 +384,11 @@ p{margin-bottom:10px;}
 
 #tablePrices {
     margin-bottom: 20%;
+}
+
+#UserEnter {
+    display:none;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 16px;
 }

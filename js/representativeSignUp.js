@@ -11,6 +11,7 @@ $(document).ready(function () {
 
     $('#register-submit-btn').on('click', function () {
         event.preventDefault();
+        $("#errordivs").empty();
         var representative = {
             email: $email.val(),
             password: $password.val(),
@@ -36,8 +37,25 @@ $(document).ready(function () {
                 console.log("rep added");
                 window.location.href = "index.html";
             },
-            error: function () {
-//                alert("Error" + JSON.stringify(representative));
+            error: function (xhr, status, error) {              
+                var jsonResponseText = $.parseJSON(xhr.responseText);
+                var count = 0;
+                $.each(jsonResponseText, function (name, val) {
+                    if (name == "errors") {
+                        $('#errordivs').append('Validation error(s)');
+                        $.each(val, function (index, value) {
+                            count++;
+                            $('#errordivs').append('</br> ' + count + '. ' + value);
+                        });
+                        $("#errordivs").show();
+                        $('#errordivs').delay(5000).fadeOut('slow');
+                        $(function () {
+                            setTimeout(function () {
+                                $("#errordivs").hide('blind', {}, 500)
+                            }, 5000);
+                        });
+                    }
+                });
             }
         });
     });
