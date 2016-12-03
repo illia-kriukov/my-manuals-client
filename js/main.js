@@ -2,16 +2,7 @@
 /*global $, jQuery, alert*/
 //Send Post request to server with credentials
 $(document).ready(function () {
-    // Toastr notifications configuration
-    toastr.options = {
-        "positionClass": "toast-top-right",
-        "onclick": null,
-        "showDuration": "0",
-        "hideDuration": "0",
-        "timeOut": "5000",
-        "showMethod": "fadeIn"
-    };
-
+    
     // Consumer & Representative registration dropdown menu
     $('.dropdown').hover(function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn();
@@ -92,8 +83,11 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 var jsonResponseText = $.parseJSON(xhr.responseText);
                 $.each(jsonResponseText, function (name, val) {
-                    if (name == "error_description") {
-                        toastr.error(val);
+                    if (name == "error_description") {                        
+                        iziToast.error({
+                            title: 'Error',
+                            message: val,
+                        });
                     }
                 });
             }
