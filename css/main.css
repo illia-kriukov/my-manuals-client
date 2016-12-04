@@ -149,7 +149,7 @@ table#acrylic {
     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+/*    cursor: pointer;*/
 }
 #acrylic thead {
     -moz-border-radius: 5px;
@@ -205,6 +205,7 @@ table#acrylic {
     -webkit-border-bottom-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+/*
 #acrylic tbody:hover > tr td {
     filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=50);
     opacity: 0.5;
@@ -216,6 +217,7 @@ table#acrylic {
     opacity: 1;
     transition: 0.2s all;
 }
+*/
 
 /*IF we are going to create custom queries I will figure out how to display the table*/
 /*
@@ -391,4 +393,38 @@ p{margin-bottom:10px;}
 }
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
     padding: 16px;
+}
+
+
+body{margin:40px;}
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+#pID{
+    display: none;
 }

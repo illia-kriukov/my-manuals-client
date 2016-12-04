@@ -32,8 +32,7 @@ $(document).ready(function () {
                 "Accept": "application/json",
                 "Authorization": "Bearer " + window.localStorage.getItem('access_token')
             },
-            //datatype json creates the crossorigin problem because of JSONP
-            //dataType: 'json',
+
             data: product,
             processData: false,
             contentType: false,
@@ -42,7 +41,7 @@ $(document).ready(function () {
                 $('form :input').val('');
                 return true;
             },
-            error: function (xhr, status, error) {                
+            error: function (xhr, status, error) {
                 var jsonResponseText = $.parseJSON(xhr.responseText);
                 var count = 0;
                 $.each(jsonResponseText, function (name, val) {

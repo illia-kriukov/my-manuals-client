@@ -14,14 +14,7 @@ $(document).ready(function () {
     }, function () {
         $(this).stop(true, true).delay(200).fadeOut();
     });
-    $("#close").click(function () {
-        $("#popBackground").fadeOut();
-        $("#popBox").fadeOut();
-    });
-    $("#popBackground").click(function () {
-        $("#popBackground").fadeOut();
-        $("#popBox").fadeOut();
-    });
+
 
     "use strict";
     var $username = $('#fpUsername');

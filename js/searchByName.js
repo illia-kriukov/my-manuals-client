@@ -25,14 +25,19 @@ $(document).ready(function () {
                     $.each(response, function (index, product) {
                         var tr = $('<tr/>');
                         tableBody.append(tr);
-                        var td = $('<td>' + product.name + '</td>').appendTo(tr);
-                        var td = $('<td>' + product.model + '</td>').appendTo(tr);
-                        var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
+                        var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
+                        var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+
+                        var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
+                        var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);
+                        var td = $('<td class="pCompany">' + product.company.name + '</td>').appendTo(tr);
                         var categoriesTd = $('<td/>').appendTo(tr);
+
                         $.each(product.categories, function (index1, category) {
-                            var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
+                            var span = $('<span class="pCategories">' + " " + category.name + '</span>').appendTo(categoriesTd);
                         });
                     });
+
 
 
 
