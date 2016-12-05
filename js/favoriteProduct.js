@@ -25,24 +25,27 @@ $(document).ready(function () {
                     headers: {
                         "Authorization": "Bearer " + window.localStorage.getItem('access_token')
                     },
-                    success: function (response) {
-
-                        //Imran Add some success popup Here
-                        console.log("success added" + pID);
+                    success: function (response) {                       
+                        iziToast.success({
+                            title: 'OK',
+                            message: 'Product Successfully Added to Favourities!',
+                        });
                     },
                     error: function (error) {
-                        console.log(error);
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'While submitting your request',
+                        });
                     }
                 });
             }
 
 
-        } else if (length == 0) {
-
-            // Imran Add a popup suggesting the user to log in
-            // and possibly move the page lower to the pricing table
-            console.log("please Log in");
-
+        } else if (length == 0) {            
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Please first Login',
+            });
             $('html, body').animate({
                 scrollTop: $("#tablePrices").offset().top
             }, 2000);

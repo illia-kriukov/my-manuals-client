@@ -33,8 +33,11 @@ $(document).ready(function () {
                 "Content-Type": "application/json "
             },
 
-            success: function () {
-                console.log("rep added");
+            success: function () {                
+                iziToast.success({
+                    title: 'OK',
+                    message: 'Representative Successfully Added!',
+                });
                 window.location.href = "index.html";
             },
             error: function (xhr, status, error) {              
