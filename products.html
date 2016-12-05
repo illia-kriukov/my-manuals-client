@@ -36,13 +36,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="popBackground"></div>
-    <div id="popBox">
-        <span id="errorType">Ooops,something wasn't right</span>
-        <span id="close">&times;</span>
-        <hr id="errorLine">
-        <span id="errorText">Your username and password do not match.</span>
-    </div>
+
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -100,10 +94,13 @@
         <!--<hr>-->
     </div>
 
+    
+<!--    Imran center this one-->
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-12">
+                
                 <div class="col-md-7 col-lg-offset-5">
                     <div class="form-group col-md-2">
                         <label>Categories</label>
@@ -116,6 +113,7 @@
                             <!--<span class="glyphicon glyphicon-search"></span>--></button>
                     </div>
                 </div>
+                
             </div>
         </div>
         <div class="row">
@@ -125,7 +123,7 @@
 
                     <thead>
                         <tr>
-                            <th id="heartFavorite">#</th>
+                            <th id="heartFavorite"></th>
                             <th>Name</th>
                             <th>Model</th>
                             <th>Company</th>
@@ -137,7 +135,250 @@
                 <p>
             </div>
         </div>
-        <!--<hr>-->
+        <hr>
+        <!--    Pricing Table-->
+
+
+        <div id="tablePrices" class="container">
+            <h1 style="text-align:center;">Do you want more from your manuals? Click <strong>Join</strong> and worry no more.</h1>
+            <br>
+            <br>
+
+            <div class="sub_table">
+                <div class="container">
+                    <div class="row">
+                        <div class="table_title">
+                            <p>Step One</p>
+                            <hr>
+                            <h1>Choose Your Plan</h1>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12">
+                            <div class="box-1 center">
+                                <div class="panel panel-success panel-pricing">
+                                    <div class="panel-heading">
+                                        <h3>1 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p><strong>$100</strong></p>
+                                    </div>
+                                    <ul class="list-group text-center">
+                                        <li class="list-group-item"><strong>10</strong>
+                                            <br> Fidelity Point</li>
+                                    </ul>
+                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join1">JOIN</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12">
+                            <div class="box-1 center">
+                                <div class="panel panel-success panel-pricing">
+                                    <div class="panel-heading">
+                                        <h3>3 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p><strong>$300</strong></p>
+                                    </div>
+                                    <ul class="list-group text-center">
+                                        <li class="list-group-item"><strong>30</strong>
+                                            <br> Fidelity Point</li>
+                                    </ul>
+                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join2">JOIN</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12">
+                            <div class="box-1 center">
+                                <div class="panel panel-success panel-pricing">
+                                    <div class="panel-heading">
+                                        <h3>6 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p><strong>$600</strong></p>
+                                    </div>
+                                    <ul class="list-group text-center">
+                                        <li class="list-group-item"><strong>90</strong>
+                                            <br> Fidelity Point</li>
+                                    </ul>
+                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join3">JOIN</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12">
+                            <div class="box-1 center">
+                                <div class="panel panel-success panel-pricing">
+                                    <div class="panel-heading">
+                                        <h3>12 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p><strong>$1200</strong></p>
+                                    </div>
+                                    <ul class="list-group text-center">
+                                        <li class="list-group-item"><strong>240</strong>
+                                            <br> Fidelity Point</li>
+                                    </ul>
+                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join4">JOIN</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="form_div">
+                    <div class="container">
+                        <div class="order">
+                            <div class="table_title">
+                                <p>Step Two</p>
+                                <hr>
+                                <h1>Enter Your Order</h1>
+                            </div>
+                            <form method="post" action="">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-md-8 col-xs-12">
+                                            <p>
+                                                <input type="text" placeholder="Street Address" name="street_address">
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 col-xs-12">
+                                            <p>
+                                                <input type="text" placeholder="Suite Apt" name="suit_apt">
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <p>
+                                                <input type="text" placeholder="City" name="city">
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-xs-12">
+                                            <p>
+                                                <select name="state">
+                                                    <option class="active">State</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-xs-12">
+                                            <p>
+                                                <input type="text" placeholder="Zip Code" name="zip_code">
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <p>
+                                                <input type="text" placeholder="Phone Number" name="phone_no">
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <p>
+                                                <input type="email" placeholder="Email Address" name="email">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <div class="col-sm-6 col-md-6 col-xs-12">
+                                        <p>
+                                            <input type="text" placeholder="First Name" name="fname">
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-xs-12">
+                                        <p>
+                                            <input type="text" placeholder="Last Name" name="lname">
+                                        </p>
+                                    </div>
+
+                                    <!--<button class="cn_btn">Continue</button>-->
+                                    <input type="submit" class="cn_btn" name="submit" value="Continue" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="form_div1" class="row">
+                <div class="container">
+                    <div class="order">
+                        <div class="table_title">
+                            <p>Step Three</p>
+                            <hr>
+                            <h1>Add a Payment Method </h1>
+                        </div>
+                        <form action="" method="post">
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-sm-9 col-md-9 col-xs-12">
+                                        <p>
+                                            <input type="text" name="ac_number" placeholder="Credit Card / Debit Card Number ">
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 col-md-3 col-xs-12">
+                                        <p>
+                                            <input type="text" name="cvv" placeholder="CVV">
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-xs-12">
+                                        <p>
+                                            <select name="month">
+                                                <option class="active">Month</option>
+                                                <option value="1">January</option>
+                                                <option value="2">Febuary</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 col-md-3 col-xs-12">
+                                        <p>
+                                            <select name="year">
+                                                <option class="active">Year</option>
+                                                <option value="1">2015</option>
+                                                <option value="2">2016</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 col-md-3 col-xs-12">
+                                        <p>
+                                            <input type="text" name="zip" placeholder="Billing Zip">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-xs-12">
+                                <div class="r_pay">
+                                    <!-- PayPal Logo -->
+                                    <table border="0" cellpadding="10" cellspacing="0" align="center">
+                                        <tr>
+                                            <td align="center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- PayPal Logo -->
+                                    <button>Get It</button>
+                                    <button>Cancel / Remove From Cart</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
     </div>
     <!-- /container -->
     <!-- JS files -->

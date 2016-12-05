@@ -43,6 +43,13 @@ $(document).ready(function () {
             // and possibly move the page lower to the pricing table
             console.log("please Log in");
 
+            $('html, body').animate({
+                scrollTop: $("#tablePrices").offset().top
+            }, 2000);
+            return false;
+
+
+
         }
 
 
