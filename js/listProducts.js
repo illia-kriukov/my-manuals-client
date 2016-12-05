@@ -1,8 +1,10 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
-//Mount the onclick Function of Sign Up **representatives
 $(document).ready(function () {
     "use strict";
+ var authority = window.localStorage.getItem('authority');
+    
+    //Show all products
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/products',
@@ -17,6 +19,11 @@ $(document).ready(function () {
             $.each(response, function (index, product) {
                 var tr = $('<tr/>');
                 tableBody.append(tr);
+                var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
+                if (authority !== "ROLE_ADMIN") {
+                    var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+
+                }
                 var td = $('<td>' + product.name + '</td>').appendTo(tr);
                 var td = $('<td>' + product.model + '</td>').appendTo(tr);
                 var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
@@ -26,16 +33,20 @@ $(document).ready(function () {
                 });
             });
         }
-    });    
+    });
 });
-$('#btnfilter').on('click', function () {    
-    if ($("#category").val() == "" || $("#category").val() == null) {        
+
+// Filter Products
+$('#btnfilter').on('click', function () {
+    var authority = window.localStorage.getItem('authority');
+    if ($("#category").val() == "" || $("#category").val() == null) {
         iziToast.warning({
             title: 'Caution',
             message: 'Please First Select Category',
         });
-    }
-    else {
+    } else {
+        //        $('#test').attr('id', 'acrylic');
+        $('#acrylic').show();
         event.preventDefault();
         //Ajax call to the backend API receive products
         $.ajax({
@@ -47,12 +58,18 @@ $('#btnfilter').on('click', function () {
             headers: {
                 "Content-Type": "application/json"
             },
-            success: function (response) {               
+            success: function (response) {
                 var tableBody = $('#TableBody');
                 tableBody.empty();
                 $.each(response, function (index, product) {
                     var tr = $('<tr/>');
                     tableBody.append(tr);
+
+                    var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
+                    if (authority !== "ROLE_ADMIN") {
+                        var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+
+                    }
                     var td = $('<td>' + product.name + '</td>').appendTo(tr);
                     var td = $('<td>' + product.model + '</td>').appendTo(tr);
                     var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
@@ -60,7 +77,7 @@ $('#btnfilter').on('click', function () {
                     $.each(product.categories, function (index1, category) {
                         var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
                     });
-                });              
+                });
             }
         });
     }

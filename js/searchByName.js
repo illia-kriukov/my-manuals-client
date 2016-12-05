@@ -1,6 +1,7 @@
 $(document).ready(function () {
     "use strict";
     var productName = $('#searchBox').val();
+    var authority = window.localStorage.getItem('authority');
 
     $('#searchButton').on('click', function () {
         if ($('#searchBox').val() == "") {
@@ -26,7 +27,11 @@ $(document).ready(function () {
                         var tr = $('<tr/>');
                         tableBody.append(tr);
                         var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
-                        var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+
+                        if (authority !== "ROLE_ADMIN") {
+                            var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+
+                        }
 
                         var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
                         var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);

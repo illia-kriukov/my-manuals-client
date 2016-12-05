@@ -13,7 +13,7 @@ $(document).ready(function () {
                 .find("#pID") // Gets a descendent with class I want
                 .text(); // Retrieves the text within <td>
             if (pID !== "") {
-                console.logpID;
+
                 //Ajax call to favorite product.
                 $.ajax({
                     type: 'POST',

@@ -8,6 +8,11 @@ $(document).ready(function () {
     var length = window.localStorage.length;
 
     if (length > 0) {
+        var authority = window.localStorage.getItem('authority');
+        if (authority == "ROLE_ADMIN") {
+
+            $("#heartFavorite").hide();
+        }
 
         $("#UserEnter").hide();
         $("#UserExit").show();

@@ -64,7 +64,9 @@ $(document).ready(function () {
                     success: function (response) {
 
                         window.localStorage.setItem('authority', response.authority);
+                    
                         if (response.authority == "ROLE_ADMIN") {
+                         
                             window.location.href = "new-product.html";
                         } else if (response.authority == "ROLE_USER") {
                             window.location.href = "consumer.html";
