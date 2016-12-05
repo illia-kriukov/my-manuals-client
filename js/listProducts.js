@@ -15,6 +15,7 @@ $(document).ready(function () {
             "Content-Type": "application/json"
         },
         success: function (response) {
+             $('#acrylic').show();
             var tableBody = $('#TableBody');
             $.each(response, function (index, product) {
                 var tr = $('<tr/>');
