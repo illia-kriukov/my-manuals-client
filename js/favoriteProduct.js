@@ -31,15 +31,19 @@ $(document).ready(function () {
                             message: 'Product Successfully Added to Favourities!',
                         });
                     },
-                    error: function (error) {
-                        iziToast.error({
-                            title: 'Error',
-                            message: 'While submitting your request',
-                        });
+                    error: function (xhr, status, error) {
+                        var jsonResponseText = $.parseJSON(xhr.responseText);                        
+                        $.each(jsonResponseText, function (name, val) {
+                            if (name == "errors") {                              
+                                iziToast.info({
+                                    title: 'Hello',
+                                    message: val,
+                                });
+                            }
+                        });                        
                     }
                 });
             }
-
 
         } else if (length == 0) {            
             iziToast.warning({
