@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -46,10 +46,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html">MyManuals</a>
-                <a class="navbar-brand" href="./products.html">Products</a>
+
+                <!--left menu-->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="navbar-brand" href="./index.html">Home</a></li>
+                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
+
+                        <!-- drop down menu-->
+
+                        <ul id="menuCategories" class="dropdown-menu " role="menu">
+                            <li>
+                                <a id="allCategories"> </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
+
             <div id="navbar" class="navbar-collapse collapse">
+
                 <form id="regForm" class="navbar-form navbar-right" role="form">
 
                     <div id="UserExit">
@@ -112,7 +128,7 @@
         <table id="acrylic">
             <thead>
                 <tr>
-                    <th id="heartFavorite">  </th>
+                    <th id="heartFavorite"> </th>
                     <th>Name</th>
                     <th>Model</th>
                     <th>Company</th>
@@ -403,7 +419,7 @@
     </footer>
 
     <!-- JS files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/iziToast.min.js"></script>
     <script src="js/main.js"></script>
@@ -413,6 +429,8 @@
     <script src="js/userInfo.js"></script>
     <script src="js/subscription.js"></script>
     <script src="js/favoriteProduct.js"></script>
+
+
 
 
 

@@ -2,7 +2,7 @@
 /*global $, jQuery, alert*/
 //Send Post request to server with credentials
 $(document).ready(function () {
-    
+
     // Consumer & Representative registration dropdown menu
     $('.dropdown').hover(function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn();
@@ -23,6 +23,41 @@ $(document).ready(function () {
     var $grant_type = "password";
     var $client_id = "mymanuals";
     var $secret = "secret";
+
+
+    //All Categories populate menu
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/categories',
+        crossOrigin: true,
+        dataType: "JSON",
+        cache: false,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        success: function (response) {
+         
+
+            var Names = response.map(function (obj) {
+                return obj.name;
+            });
+            var IDz = response.map(function (obj) {
+                return obj.id;
+            });
+            $.each(Names, function (i) {
+
+
+                $("#allCategories ").append('<li class="menuCategoryButtons"><a href="./products.html?id=' + IDz[i] + '"><span>' + Names[i] + '</span></a> </li>');
+
+
+
+            });
+        }
+    });
+
+
+
+
 
     // Mount the onclick Function of Sign In
     $('#fpSignIN').on('click', function () {
@@ -64,9 +99,9 @@ $(document).ready(function () {
                     success: function (response) {
 
                         window.localStorage.setItem('authority', response.authority);
-                    
+
                         if (response.authority == "ROLE_ADMIN") {
-                         
+
                             window.location.href = "new-product.html";
                         } else if (response.authority == "ROLE_USER") {
                             window.location.href = "consumer.html";
@@ -78,7 +113,7 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 var jsonResponseText = $.parseJSON(xhr.responseText);
                 $.each(jsonResponseText, function (name, val) {
-                    if (name == "error_description") {                        
+                    if (name == "error_description") {
                         iziToast.error({
                             title: 'Error',
                             message: val,

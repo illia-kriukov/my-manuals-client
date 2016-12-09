@@ -29,7 +29,7 @@ $(document).ready(function () {
                         var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
 
                         if (authority !== "ROLE_ADMIN") {
-                            var td = $('<td>' + '<button type="submit" class="btn btn-danger btn-circle favButton">' + '<i class="glyphicon glyphicon-heart">' + '</i>' + '</button>' + '</td>').appendTo(tr);
+                            var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>'+ '</td>').appendTo(tr);
 
                         }
 

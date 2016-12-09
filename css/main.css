@@ -412,3 +412,16 @@ p{margin-bottom:10px;}
 .priceBtn {
      border-radius: 300px;
 }
+
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;    
+}
+#categoryDivider {
+    font-size: 20px;
+    text-align: center;
+}
+
+.glyphicon-plus
+{
+    font-size: 12px;
+}
