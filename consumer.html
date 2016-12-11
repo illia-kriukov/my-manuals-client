@@ -47,11 +47,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
-                      <!--left menu-->
+
+                <!--left menu-->
                 <ul class="nav navbar-nav">
-                    <li class="dropdown"><a class="navbar-brand" href="./index.html">Home</a></li>
-                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
+                    <li class="dropdown"><a id="homeButton" class="navbar-brand" href="./consumer.html">Home</a></li>
+                    <li class="dropdown"><a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
 
                         <!-- drop down menu-->
 
@@ -62,45 +62,75 @@
                         </ul>
                     </li>
                 </ul>
-             
             </div>
+            
             <div id="navbar" class="navbar-collapse collapse">
+
                 <form class="navbar-form navbar-right" role="form">
 
-                    <span id="GreetingsUser"></span>
-
-                    <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>
+                    <ul id="userRightProfile" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Prefferences</a></li>
+                                <li class="divider"></li>
+                                <li><a id="userLogout" href="#">Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </form>
+
+
+
+    <div id="topSearchBar" class="input-group col-md-6">
+        <input id="searchBox" type="text" class=" search-query form-control" placeholder="Search" name="q">
+        <div class="input-group-btn">
+            <button id="searchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+
+
             </div>
+
+
             <!--/.navbar-collapse -->
         </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div id="mainSearchBox" class="jumbotron">
         <div class="container">
-            <h1 id=""></h1>
-            <p id="repParagraph">Let us help you keep the manuals of your home appliances neat and tidy.</p>
+            <div id="searchResults" class="wrapper">
+                <table id="acrylic">
+                    <thead>
+                        <tr>
+                            <th id="heartFavorite"> </th>
+                            <th>Name</th>
+                            <th>Model</th>
+                            <th>Company</th>
+                            <th>Categories</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableBody">
+
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
-    </div>
 
-    <div class="container">
-        <!-- Example row of columns -->
-        <hr>
     </div>
-    <!-- /container -->
-
     <!-- JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-
-    </script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/userInfo.js"></script>
     <script src="js/userLogout.js"></script>
     <script src="js/sessionHandle.js"></script>
-     <script src="js/main.js"></script>
+    <script src="js/consumerItemSearchByName.js"></script>
+    <script src="js/getConsumerProducts.js"></script>
+
+
 </body>
 
 </html>

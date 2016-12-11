@@ -50,7 +50,7 @@
                 <!--left menu-->
                 <ul class="nav navbar-nav">
                     <li class="dropdown"><a class="navbar-brand" href="./index.html">Home</a></li>
-                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
+                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Categories  <span class="caret"></span></a>
 
                         <!-- drop down menu-->
 
@@ -69,9 +69,10 @@
                 <form id="regForm" class="navbar-form navbar-right" role="form">
 
                     <div id="UserExit">
-                        <a id="UserLink" href=""> <span id="GreetingsUser"></span></a>
-                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>
+                
                     </div>
+                 
+                   
 
                     <div id="UserEnter">
                         <div class="form-group">
@@ -81,6 +82,7 @@
                             <input id="fpPassword" type="password" placeholder="Password" class="form-control">
                         </div>
                         <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
+                        
                         <div class="btn-group dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <span class="hidden-sm hidden-xs">Register&nbsp;</span>
@@ -95,15 +97,18 @@
                     </div>
                 </form>
             </div>
+          
+            
             <!--/.navbar-collapse -->
         </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div id="mainSearchBox" class="jumbotron">
 
         <!--        Main search box-->
-        <div class="container">
+        <div  class="container">
+            
             <div class="row">
                 <h2 id="searchBoxHeader">Find all your items here</h2>
                 <div id="custom-search-input">
@@ -420,6 +425,7 @@
 
     <!-- JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/iziToast.min.js"></script>
     <script src="js/main.js"></script>

@@ -1,14 +1,13 @@
-/*jslint browser: true*/
-/*global $, jQuery, alert*/
 $(document).ready(function () {
     "use strict";
     var productName = $('#searchBox').val();
-    var authority = window.localStorage.getItem('authority');
- 
 
 
     $('#searchButton').on('click', function () {
-        if ($('#searchBox').val() == "") {
+
+        var authority = window.localStorage.getItem('authority');
+
+        if ($('#searchBox').val() == "1") {
             $('#acrylic').hide();
         } else {
 
@@ -16,14 +15,16 @@ $(document).ready(function () {
                 type: 'GET',
                 url: 'http://localhost:8080/products/search?query=' + $('#searchBox').val() + '&page=0&count=10',
                 crossOrigin: true,
-                dataType: "JSON",
+                dataType: "json",
                 cache: false,
                 headers: {
                     "Content-Type": "application/json"
                 },
                 success: function (response) {
 
+                    var authority = window.localStorage.getItem('authority');
                     $('#acrylic').show();
+                    $('#heartFavorite').show();
                     $('#TableBody').empty();
 
                     var tableBody = $('#TableBody');
@@ -32,10 +33,14 @@ $(document).ready(function () {
                         tableBody.append(tr);
                         var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
 
-                        if (authority !== "ROLE_ADMIN") {
-                            var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>' + '</td>').appendTo(tr);
+                        // Here I will check which of the items are already saved and which are not
+                        //                        if (authority !== "ROLE_ADMIN") {
+                        //                            var td = $('<td>' + '<button type="button" class="btn btn-danger btn-number"  data-type="minus" "><span class="glyphicon glyphicon-minus"></span></button>' + '</td>').appendTo(tr);
+                        // }
 
-                        }
+                        //                            <button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+
+
 
                         var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
                         var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);

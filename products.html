@@ -47,29 +47,46 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
-                    <ul class="nav navbar-nav">
-                    <li class="dropdown"><a class="navbar-brand" href="./index.html">Home</a></li>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a id="homeButton" class="navbar-brand" href="./index.html">Home</a></li>
                     <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
 
                         <!-- drop down menu-->
 
                         <ul id="menuCategories" class="dropdown-menu " role="menu">
-                            <li><a id="allCategories"> </a></li>
+                            <li>
+                                <a id="allCategories"> </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-                
-                
-                
-                
+
+
+
+
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+
+                <form id="userPanel" class="navbar-form navbar-right" role="form">
+
+                    <ul id="userRightProfile" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Prefferences</a></li>
+                                <li class="divider"></li>
+                                <li><a id="userLogout" href="#">Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </form>
+
                 <form id="regForm" class="navbar-form navbar-right" role="form">
 
                     <div id="UserExit">
-                        <a id="UserLink" href=""> <span id="GreetingsUser"></span></a>
-                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>
+                       
+                        <!--                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>-->
                     </div>
                     <div id="UserEnter">
                         <div class="form-group">
@@ -108,8 +125,8 @@
         <!--<hr>-->
     </div>
 
-    
-<!--    Imran center this one-->
+
+    <!--    Imran center this one-->
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
@@ -123,7 +140,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <button class="btn btn-success" id="btnfilter" type="submit">
-                            Filter                            
+                            Filter
                         </button>
                     </div>
                 </div>
@@ -404,11 +421,12 @@
     <script src="js/main.js"></script>
     <script src="js/listCategories.js"></script>
     <script src="js/listProducts.js"></script>
-    <script src="js/sessionHandle.js"></script>
+
     <script src="js/favoriteProduct.js"></script>
     <script src="js/userInfo.js"></script>
     <script src="js/userLogout.js"></script>
-     <script src="js/mainProducts.js"></script>
+    <script src="js/mainProducts.js"></script>
+    <script src="js/sessionHandle.js"></script>
 
 </body>
 

@@ -6,23 +6,29 @@ $(document).ready(function () {
 
     //Hide log in and register if session in progress
     var length = window.localStorage.length;
+    var authority = window.localStorage.getItem('authority');
 
     if (length > 0) {
-        var authority = window.localStorage.getItem('authority');
+
+     
+      
         if (authority == "ROLE_ADMIN") {
-
+            $("#homeButton").attr("href", "./representative.html");
             $("#heartFavorite").hide();
-        }
+         
 
-        $("#UserEnter").hide();
-        $("#UserExit").show();
+        } else {
+            $("#homeButton").attr("href", "./consumer.html");
+            $("#UserEnter").hide();
+            $("#UserExit").show();
+        }
 
 
     } else if (length == 0) {
 
 
         $("#UserEnter").show();
-        $("#UserExit").hide();
+        $("#userPanel").hide();
 
     }
 
