@@ -438,6 +438,7 @@ p{margin-bottom:10px;}
 
 #userRightProfile {
         margin-left: 10px;
+   
 }
 
 #userNameDisplay {
@@ -450,4 +451,8 @@ clear: both;
 
 #topSearchBar {
     margin-top: 10px;
+}
+
+#userRightArea {
+     margin-top: 0px;
 }
