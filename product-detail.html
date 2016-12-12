@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>My manuals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/iziToast.css" rel="stylesheet" />
+   </head>
+<body>
+
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">MyManuals</a>
+                <a class="navbar-brand" href="./products.html">Products</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form id="regForm" class="navbar-form navbar-right" role="form">
+
+                    <div id="UserExit">
+                        <a id="UserLink" href=""> <span id="GreetingsUser"></span></a>
+                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>
+                    </div>
+                    <div id="UserEnter">
+                        <div class="form-group">
+                            <input id="fpUsername" type="text" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="fpPassword" type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
+                        <div class="btn-group dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="hidden-sm hidden-xs">Register&nbsp;</span>
+                                <i class="fa fa-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
+                                <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Product Detail </h1>
+            <p>Browse through the products listed in our website. Log in to save them to your account.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--<hr>-->
+    </div>
+
+ 
+    <div class="container">
+        <!-- Example row of columns -->
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form class="form-horizontal" role="form">
+                        <div class="form-body">                          
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Name:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="name"> -- </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Model:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="model"> -- </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Categories:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="categories"> -- </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Company Name:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="CompName"> -- </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Links to Manuals:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="LinksManual"> -- </p>                                         
+                                        </div>
+                                    </div>
+                                </div>                                                           
+                            </div>   
+                            <div class="row">                              
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Videos:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static" id="Videos"> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                                      
+                        </div>    
+                        <div class="row">
+                            <div id="prodVideo" class="col-lg-12 col-sm-12 col-md-12">
+
+                            </div>
+                        </div>
+                    </form>                 
+                </div>
+            </div>
+        </div>
+        <hr>             
+        
+    </div>
+    <!-- /container -->
+    <!-- JS files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>   
+    <script src="js/vendor/bootstrap.min.js"></script>  
+    <script src="js/vendor/iziToast.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/productDetail.js"></script>
+    <script src="js/sessionHandle.js"></script>
+    <script src="js/userInfo.js"></script>
+    <script src="js/userLogout.js"></script>  
+</body>
+</html>

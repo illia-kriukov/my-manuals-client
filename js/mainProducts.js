@@ -51,7 +51,8 @@ $(document).ready(function () {
 
 
                     }
-                    var td = $('<td>' + product.name + '</td>').appendTo(tr);
+                    var purl = "./product-detail.html?id=" + product.id;
+                    var td = $('<td><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);
                     var td = $('<td>' + product.model + '</td>').appendTo(tr);
                     var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
                     var categoriesTd = $('<td/>').appendTo(tr);

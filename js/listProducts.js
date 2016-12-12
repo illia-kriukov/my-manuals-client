@@ -39,8 +39,9 @@ $('#btnfilter').on('click', function () {
                     if (authority !== "ROLE_ADMIN") {
                         var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>' + '</button>' + '</td>').appendTo(tr);
 
-                    }
-                    var td = $('<td>' + product.name + '</td>').appendTo(tr);
+                    }                    
+                    var purl = "./product-detail.html?id=" + product.id;
+                    var td = $('<td><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);
                     var td = $('<td>' + product.model + '</td>').appendTo(tr);
                     var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
                     var categoriesTd = $('<td/>').appendTo(tr);
