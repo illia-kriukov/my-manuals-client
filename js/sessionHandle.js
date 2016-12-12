@@ -10,12 +10,12 @@ $(document).ready(function () {
 
     if (length > 0) {
 
-     
-      
+
+
         if (authority == "ROLE_ADMIN") {
             $("#homeButton").attr("href", "./representative.html");
             $("#heartFavorite").hide();
-         
+
 
         } else {
             $("#homeButton").attr("href", "./consumer.html");
@@ -27,6 +27,7 @@ $(document).ready(function () {
     } else if (length == 0) {
 
 
+        $("#topSearchBar").hide();
         $("#UserEnter").show();
         $("#userPanel").hide();
 

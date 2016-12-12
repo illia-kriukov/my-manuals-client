@@ -5,7 +5,7 @@ $(document).ready(function () {
     "use strict";
     var repQuery = window.localStorage.getItem('representativeSearch');
 
-    if (repQuery !== "") {
+    if (repQuery != null) {
         $.ajax({
             type: 'GET',
             url: 'http://localhost:8080/products/search?query=' + repQuery + '&page=0&count=10',
@@ -16,6 +16,7 @@ $(document).ready(function () {
                 "Content-Type": "application/json"
             },
             success: function (response) {
+                console.log(repQuery);
                 console.log("executed query search");
 
                 $('#acrylic').show();
@@ -50,10 +51,10 @@ $(document).ready(function () {
                 "Authorization": "Bearer " + window.localStorage.getItem('access_token')
             },
             success: function (response) {
+                console.log('query is empty');
                 var authority = window.localStorage.getItem('authority');
                 $('#acrylic').show();
                 $('#heartFavorite').hide();
-
                 $('#TableBody').empty();
 
                 var tableBody = $('#TableBody');
