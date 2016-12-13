@@ -4,9 +4,16 @@ $(document).ready(function () {
 
     "use strict";
 
+    console.log(window.location.pathname);
+    //put a path here
+
+
+
     //Hide log in and register if session in progress
     var length = window.localStorage.length;
     var authority = window.localStorage.getItem('authority');
+
+
 
     if (length > 0) {
 
@@ -19,10 +26,16 @@ $(document).ready(function () {
             $("#heartFavorite").hide();
             $("#rightListItems").prepend('<li><a href="./new-product.html">Upload Manual</a></li>');
 
+            if (window.location.pathname == "/C:/xampp/htdocs/repo/index.html") {
+                window.location.href = "./representative.html";
+            }
 
 
 
         } else {
+            if (window.location.pathname == "/C:/xampp/htdocs/repo/index.html") {
+                window.location.href = "./consumer.html";
+            }
             $("#homeButton").attr("href", "./consumer.html");
             $("#UserEnter").hide();
             $("#UserExit").show();
