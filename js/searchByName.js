@@ -25,8 +25,11 @@ $(document).ready(function () {
                     if (response.length == 0) {
                         console.log("it is null");
                           $('#acrylic').hide();
-                        $('#TableBody').empty();
-                        // Imran put a toast here to say no results or something like that
+                        $('#TableBody').empty();                       
+                        iziToast.info({
+                            title: 'Hello',
+                            message: 'No product found by this name',
+                        });
                     } else {
                         $('#acrylic').show();
                         $('#TableBody').empty();

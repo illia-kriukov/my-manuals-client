@@ -22,7 +22,10 @@ $(document).ready(function () {
                     console.log("it is null");
                     $('#acrylic').hide();
                     $('#TableBody').empty();
-                    // Imran put a toast here to say no results or something like that
+                    iziToast.info({
+                        title: 'Hello',
+                        message: 'No product found by this name',
+                    });
                 } else {
                     var tableBody = $('#TableBody');
                     $('#acrylic').show();
@@ -31,7 +34,8 @@ $(document).ready(function () {
                         var tr = $('<tr/>');
                         tableBody.append(tr);
                         var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
-                        var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
+                        var purl = "./product-detail.html?id=" + product.id;
+                        var td = $('<td class="pName"><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);
                         var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);
                         var td = $('<td class="pCompany">' + product.company.name + '</td>').appendTo(tr);
                         var categoriesTd = $('<td/>').appendTo(tr);
