@@ -17,7 +17,7 @@ $(document).ready(function () {
         success: function (response) {
             var authority = window.localStorage.getItem('authority');
             $('#acrylic').show();
-            $('#heartFavorite').hide();
+            //            $('#heartFavorite').hide();
             $('#TableBody').empty();
 
             var tableBody = $('#TableBody');
@@ -27,11 +27,11 @@ $(document).ready(function () {
                 var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
 
 
-                // Need to check which one are already saved and which are not
-                //                        if (authority !== "ROLE_ADMIN") {
-                //                            var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>' + '</td>').appendTo(tr);
-                //
-                //                        }
+
+                //minus button
+                if (authority !== "ROLE_ADMIN") {
+                    var td = $('<td>' + '<button type="button" class="btn btn-danger btn-number"  data-type="minus" "><span class="glyphicon glyphicon-minus"></span></button>' + '</td>').appendTo(tr);
+                }
 
                 var purl = "./product-detail.html?id=" + product.id;
                 var td = $('<td class="pName"><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);
@@ -41,6 +41,7 @@ $(document).ready(function () {
 
                 $.each(product.categories, function (index1, category) {
                     var span = $('<span class="pCategories">' + " " + category.name + '</span>').appendTo(categoriesTd);
+                  
                 });
             });
 

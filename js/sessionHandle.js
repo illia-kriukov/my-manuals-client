@@ -15,6 +15,9 @@ $(document).ready(function () {
         if (authority == "ROLE_ADMIN") {
             $("#homeButton").attr("href", "./representative.html");
             $("#heartFavorite").hide();
+            $("#rightListItems").prepend('<li><a href="./new-product.html">Upload Manual</a></li>');
+
+
 
 
         } else {
@@ -25,8 +28,7 @@ $(document).ready(function () {
 
 
     } else if (length == 0) {
-
-
+        $("#productListMarketingParagraph").append(' Log in to save them to your account.');
         $("#topSearchBar").hide();
         $("#UserEnter").show();
         $("#userPanel").hide();

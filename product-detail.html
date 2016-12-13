@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
@@ -21,10 +21,9 @@
    </head>
 <body>
 
-
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,41 +31,55 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html">MyManuals</a>
-                <a class="navbar-brand" href="./products.html">Products</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form id="regForm" class="navbar-form navbar-right" role="form">
 
-                    <div id="UserExit">
-                        <a id="UserLink" href=""> <span id="GreetingsUser"></span></a>
-                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>
-                    </div>
-                    <div id="UserEnter">
-                        <div class="form-group">
-                            <input id="fpUsername" type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input id="fpPassword" type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
-                        <div class="btn-group dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <span class="hidden-sm hidden-xs">Register&nbsp;</span>
-                                <i class="fa fa-angle-down"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
-                                <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
+                <!--left menu-->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a id="homeButton" class="navbar-brand" href="./consumer.html">Home</a></li>
+                    <li class="dropdown"><a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
+
+                        <!-- drop down menu-->
+
+                        <ul id="menuCategories" class="dropdown-menu " role="menu">
+                            <li>
+                                <a id="allCategories"> </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <form id="userRightArea" class="navbar-right" role="form">
+
+                    <ul id="userRightProfile" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span><span class="caret"></span></a>
+                            <ul id="rightListItems" class="dropdown-menu">
+                                <li><a href="#">Prefferences</a></li>
+                                <li class="divider"></li>
+                                <li><a id="userLogout" href="#">Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </form>
+
+
+
+                <div id="topSearchBar" class="input-group col-md-6">
+                    <input id="searchBox" type="text" class=" search-query form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button id="searchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
             <!--/.navbar-collapse -->
         </div>
     </nav>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">

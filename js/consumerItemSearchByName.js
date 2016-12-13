@@ -34,13 +34,17 @@ $(document).ready(function () {
                         var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
 
                         // Here I will check which of the items are already saved and which are not
-                        //                        if (authority !== "ROLE_ADMIN") {
-                        //                            var td = $('<td>' + '<button type="button" class="btn btn-danger btn-number"  data-type="minus" "><span class="glyphicon glyphicon-minus"></span></button>' + '</td>').appendTo(tr);
-                        // }
+//                                                if (authority !== "ROLE_ADMIN") {
+//                                                    var td = $('<td>' + '<button type="button" class="btn btn-danger btn-number"  data-type="minus" "><span class="glyphicon glyphicon-minus"></span></button>' + '</td>').appendTo(tr);
+//                         }
 
                         //                            <button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>
 
+         if (authority !== "ROLE_ADMIN") {
+           var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>' + '</td>').appendTo(tr);
 
+       }
+                        
 
                         var purl = "./product-detail.html?id=" + product.id;
                         var td = $('<td class="pName"><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);

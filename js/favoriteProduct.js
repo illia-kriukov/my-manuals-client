@@ -25,27 +25,39 @@ $(document).ready(function () {
                     headers: {
                         "Authorization": "Bearer " + window.localStorage.getItem('access_token')
                     },
-                    success: function (response) {                       
+                    success: function (response) {
                         iziToast.success({
                             title: 'OK',
-                            message: 'Product Successfully Added to Favourities!',
+                            message: 'Product Successfully Stored!',
                         });
                     },
                     error: function (xhr, status, error) {
-                        var jsonResponseText = $.parseJSON(xhr.responseText);                        
+                        console.log("pressed");
+                        //                           $(this).attr("class", "glyphicon-minus");
+                        //                         $(this).addClass("glyphicon-minus");
+
+                        var jsonResponseText = $.parseJSON(xhr.responseText);
                         $.each(jsonResponseText, function (name, val) {
-                            if (name == "errors") {                              
+                            if (name == "errors") {
                                 iziToast.info({
                                     title: 'Hello',
                                     message: val,
                                 });
                             }
-                        });                        
+                        });
                     }
                 });
+                
+                //Toggle + -
+                if ($(this).hasClass("favButton")) {
+                    $(this).attr("class", "btn btn-danger btn-number");
+                    $(this).attr("data-type", "minus");
+                    $(this).find('span').removeClass('glyphicon glyphicon-plus');
+                    $(this).find('span').addClass('glyphicon glyphicon-minus');
+                }
             }
 
-        } else if (length == 0) {            
+        } else if (length == 0) {
             iziToast.warning({
                 title: 'Caution',
                 message: 'Please first Login',
