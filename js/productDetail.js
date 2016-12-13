@@ -1,4 +1,4 @@
-﻿$(document).ready(function ($) {
+$(document).ready(function ($) {
     var url = window.location.href;
     var pid = location.search.split('id=')[1];
     //Show Product Detail
@@ -12,6 +12,7 @@
             "Content-Type": "application/json"
         },
         success: function (response) {
+            $("#productHeader").text(response.name);
             $("#name").text(response.name);
             $("#model").text(response.model);
             $("#CompName").text(response.company.name);
@@ -27,6 +28,7 @@
             for (var i = 0; i < response.videos.length; i++) {
                 var myId = getId(response.videos[i]);
                 videoss.append('<div class="col-md-6"><iframe width="560" height="315" src="https:\\www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe></div>');
+
             }
         },
         error: function (xhr, status, error) {
@@ -36,6 +38,7 @@
             });
         }
     });
+
     function getId(url) {
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         var match = url.match(regExp);
@@ -46,6 +49,7 @@
         }
     }
 });
+
 function getManual(id) {
     window.open('http://localhost:8080/manual/' + id);
 }
