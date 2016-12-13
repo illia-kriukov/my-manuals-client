@@ -1,4 +1,4 @@
-﻿$(document).ready(function ($) {
+$(document).ready(function ($) {
     var url = window.location.href;
     var pid = location.search.split('id=')[1];
     //Show Product Detail
@@ -26,7 +26,7 @@
             var videoss = $("#prodVideo").empty();
             for (var i = 0; i < response.videos.length; i++) {
                 var myId = getId(response.videos[i]);
-                videoss.append('<div class="col-md-6"><iframe width="560" height="315" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe></div>');
+                videoss.append('<div class="col-md-6"><iframe width="560" height="315" src="http://www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe></div>');
             }
         },
         error: function (xhr, status, error) {

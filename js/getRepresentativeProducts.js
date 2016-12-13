@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
     "use strict";
-    var repQuery = window.localStorage.getItem('representativeSearch');
+    var repQuery = window.localStorage.getItem('externalSearch');
 
     if (repQuery != null) {
         $.ajax({
@@ -18,28 +18,35 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(repQuery);
                 console.log("executed query search");
+                if (response.length == 0) {
+                    console.log("it is null");
+                    $('#acrylic').hide();
+                    $('#TableBody').empty();
+                    // Imran put a toast here to say no results or something like that
+                } else {
+                    var tableBody = $('#TableBody');
+                    $('#acrylic').show();
+                    $('#TableBody').empty();
+                    $.each(response, function (index, product) {
+                        var tr = $('<tr/>');
+                        tableBody.append(tr);
+                        var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
+                        var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
+                        var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);
+                        var td = $('<td class="pCompany">' + product.company.name + '</td>').appendTo(tr);
+                        var categoriesTd = $('<td/>').appendTo(tr);
 
-                $('#acrylic').show();
-                $('#TableBody').empty();
-
-                var tableBody = $('#TableBody');
-                $.each(response, function (index, product) {
-                    var tr = $('<tr/>');
-                    tableBody.append(tr);
-                    var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
-                    var td = $('<td class="pName">' + product.name + '</td>').appendTo(tr);
-                    var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);
-                    var td = $('<td class="pCompany">' + product.company.name + '</td>').appendTo(tr);
-                    var categoriesTd = $('<td/>').appendTo(tr);
-
-                    $.each(product.categories, function (index1, category) {
-                        var span = $('<span class="pCategories">' + " " + category.name + '</span>').appendTo(categoriesTd);
+                        $.each(product.categories, function (index1, category) {
+                            var span = $('<span class="pCategories">' + " " + category.name + '</span>').appendTo(categoriesTd);
+                        });
                     });
-                });
 
+                }
             }
+
         });
-        window.localStorage.setItem('representativeSearch', $('#searchBox').val());
+        localStorage.removeItem('externalSearch');
+
     } else {
         $.ajax({
             type: 'GET',
@@ -62,12 +69,6 @@ $(document).ready(function () {
                     var tr = $('<tr/>');
                     tableBody.append(tr);
                     var td = $('<td id="pID">' + product.id + '</td>').appendTo(tr);
-
-                    //                        if (authority !== "ROLE_ADMIN") {
-                    //                            var td = $('<td>' + '<button class="btn btn-success btn-add favButton" type="button"><span class="glyphicon glyphicon-plus"></span></button>' + '</td>').appendTo(tr);
-                    //
-                    //                        }
-                   
                     var purl = "./product-detail.html?id=" + product.id;
                     var td = $('<td class="pName"><a href="' + purl + '">' + product.name + '</a></td>').appendTo(tr);
                     var td = $('<td class="pModel">' + product.model + '</td>').appendTo(tr);
