@@ -10,7 +10,10 @@ $(document).ready(function () {
     $('#searchButton').on('click', function () {
         if ($('#searchBox').val() == "") {
             $('#acrylic').hide();
-            //Imran Add a toast here saying that you cannot performthe search
+            iziToast.info({
+                title: 'Hello',
+                message: 'Cant perform search without a name',
+            });
         } else {
 
             $.ajax({
