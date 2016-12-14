@@ -10,6 +10,7 @@ $(document).ready(function () {
     $('#searchButton').on('click', function () {
         if ($('#searchBox').val() == "") {
             $('#acrylic').hide();
+            //Imran Add a toast here saying that you cannot performthe search
         } else {
 
             $.ajax({
@@ -22,10 +23,12 @@ $(document).ready(function () {
                     "Content-Type": "application/json"
                 },
                 success: function (response) {
+                    console.log("Performed SearchByName");
+                    console.log(response);
                     if (response.length == 0) {
                         console.log("it is null");
-                          $('#acrylic').hide();
-                        $('#TableBody').empty();                       
+                        $('#acrylic').hide();
+                        $('#TableBody').empty();
                         iziToast.info({
                             title: 'Hello',
                             message: 'No product found by this name',
