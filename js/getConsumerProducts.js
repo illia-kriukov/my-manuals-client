@@ -6,7 +6,7 @@ $(document).ready(function () {
     var repQuery = window.localStorage.getItem('externalSearch');
     var authority = window.localStorage.getItem('authority');
 
-
+    //external search redirected to the products or show results in consumer
     if (repQuery != null) {
         $.ajax({
             type: 'GET',
@@ -18,6 +18,7 @@ $(document).ready(function () {
                 "Content-Type": "application/json"
             },
             success: function (response) {
+                console.log(response);
                 if (response.length == 0) {
                     console.log("it is null");
                     $('#acrylic').hide();
