@@ -456,3 +456,16 @@ clear: both;
 #userRightArea {
      margin-top: 0px;
 }
+
+
+#productSubscribeHeader {
+      margin-top: 50px;
+}
+
+#productSubscribeList {
+    margin-top: 25px;
+}
+
+#ProductSubscription {
+    display: none;
+}

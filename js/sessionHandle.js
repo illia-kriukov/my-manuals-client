@@ -20,6 +20,7 @@ $(document).ready(function () {
 
 
         if (authority == "ROLE_ADMIN") {
+            
 
             $("#tablePrices").hide();
             $("#homeButton").attr("href", "./representative.html");
@@ -39,6 +40,7 @@ $(document).ready(function () {
             $("#homeButton").attr("href", "./consumer.html");
             $("#UserEnter").hide();
             $("#UserExit").show();
+            $("#ProductSubscription").show();
         }
 
 

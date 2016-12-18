@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     <style>
         body {
             padding-top: 50px;
@@ -128,7 +130,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1 id="productHeader"></h1>
-<!--            <p>Find everything you need about it.</p>-->
+            <!--            <p>Find everything you need about it.</p>-->
         </div>
     </div>
 
@@ -208,12 +210,41 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <!--        <hr>-->
+
+        <div id="ProductSubscription" class="container">
+            <h2 id="productSubscribeHeader">Subscribe</h2>
+            <p>Receive the latest news and resources for your products. </p>
+            <ul id="productSubscribeList" class="nav ">
+                <li id="1" class="subscriptionKinds">
+                    <label>
+                        <input class="subscriptionButtons" id="subButton1" type="checkbox" data-toggle="toggle"> Subscribe to this product
+                    </label>
+                </li>
+                <li id="2" class="subscriptionKinds">
+                    <label>
+                        <input class="subscriptionButtons" id="subButton2" type="checkbox" data-toggle="toggle"> Subscribe to similar products
+                    </label>
+                </li>
+                <li id="3" class="subscriptionKinds">
+                    <label>
+                        <input class="subscriptionButtons" id="subButton3" type="checkbox" data-toggle="toggle"> Subscribe to service providers
+                    </label>
+                </li>
+
+
+            </ul>
+
+
+
+
+        </div>
 
     </div>
     <!-- /container -->
     <!-- JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/iziToast.min.js"></script>
     <script src="js/main.js"></script>
@@ -222,6 +253,8 @@
     <script src="js/userInfo.js"></script>
     <script src="js/userLogout.js"></script>
     <script src="js/externalSearch.js"></script>
+    <script src="js/consumerProductSubscribe.js"></script>
+
 </body>
 
 </html>
