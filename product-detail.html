@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -9,18 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-
     <style>
         body {
             padding-top: 50px;
         }
-
+        .hovered {
+            cursor: pointer;
+        }
+        /*li:last-child {
+            list-style-type: none;
+        }
+            ul {
+             list-style-type: none;
+            }
+            */
     </style>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link href="css/iziToast.css" rel="stylesheet" />
+    <link href="css/ribbon.css" rel="stylesheet" />
+   
 </head>
 
 <body>
@@ -129,15 +138,14 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
-            <h1 id="productHeader"></h1>
-            <!--            <p>Find everything you need about it.</p>-->
+            <h1>Product Detail </h1>
+            <p>Browse through the products listed in our website. Log in to save them to your account.</p>
         </div>
     </div>
 
     <div class="container">
         <!--<hr>-->
     </div>
-
 
     <div class="container">
         <!-- Example row of columns -->
@@ -195,13 +203,15 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Links to Manuals:</label>
                                         <div class="col-md-7">
-                                            <p class="form-control-static" id="LinksManual"> -- </p>
+                                            <p class="form-control-static" id="LinksManual">                                                
+                                                    --                                                                                                
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
+                            </div>                           
+                        </div>                       
+                        <div class="row">                            
                             <div id="prodVideo" class="col-lg-12 col-sm-12 col-md-12">
 
                             </div>
@@ -210,42 +220,50 @@
                 </div>
             </div>
         </div>
-        <!--        <hr>-->
-
-        <div id="ProductSubscription" class="container">
-            <h2 id="productSubscribeHeader">Subscribe</h2>
-            <p>Receive the latest news and resources for your products. </p>
-            <ul id="productSubscribeList" class="nav ">
-                <li id="1" class="subscriptionKinds">
-                    <label>
-                        <input class="subscriptionButtons" id="subButton1" type="checkbox" data-toggle="toggle"> Subscribe to this product
-                    </label>
-                </li>
-                <li id="2" class="subscriptionKinds">
-                    <label>
-                        <input class="subscriptionButtons" id="subButton2" type="checkbox" data-toggle="toggle"> Subscribe to similar products
-                    </label>
-                </li>
-                <li id="3" class="subscriptionKinds">
-                    <label>
-                        <input class="subscriptionButtons" id="subButton3" type="checkbox" data-toggle="toggle"> Subscribe to service providers
-                    </label>
-                </li>
-
-
-            </ul>
-
-
-
-
-        </div>
-
+        <hr> 
     </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="commentsModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Comments</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="scroller" id="ExistComment" data-always-visible="1" data-rail-visible1="1">                        
+                        <p>Existing Comments</p>
+                        <ul id="yComments">                          
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <form class="form-horizontal" id="commentForm" onsubmit="return submitNewComment();">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div style="display:none;text-align:left" id="errordivs" class="alert alert-danger">                                
+                                Validation error<br>
+                               1. Must type comment                                
+                            </div>
+                            <input type="hidden" id="recrdId" />
+                            <input type="hidden" id="rType" />
+                            <div class="form-group">
+                                <label style="float:left">New Comment</label>
+                                <input class="form-control" placeholder="Type new comment here"  id="newComment" />
+                            </div>
+                            <div class="form-group" style="text-align:center">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </form>               
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->   
     <!-- /container -->
     <!-- JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
     <script src="js/vendor/iziToast.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/productDetail.js"></script>
@@ -253,8 +271,9 @@
     <script src="js/userInfo.js"></script>
     <script src="js/userLogout.js"></script>
     <script src="js/externalSearch.js"></script>
-    <script src="js/consumerProductSubscribe.js"></script>
-
+    <script>
+               
+    </script>
 </body>
 
 </html>
