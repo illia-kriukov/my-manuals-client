@@ -4,10 +4,6 @@ $(document).ready(function () {
 
     "use strict";
 
-    console.log(window.location.pathname);
-    //put a path here
-
-
 
     //Hide log in and register if session in progress
     var length = window.localStorage.length;
@@ -41,6 +37,8 @@ $(document).ready(function () {
             $("#UserEnter").hide();
             $("#UserExit").show();
             $("#ProductSubscription").show();
+  
+            
         }
 
 

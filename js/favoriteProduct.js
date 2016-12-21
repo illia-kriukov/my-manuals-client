@@ -13,7 +13,6 @@ $(document).ready(function () {
                 .find("#pID") // Gets a descendent with class I want
                 .text(); // Retrieves the text within <td>
             if (pID !== "") {
-
                 //Ajax call to favorite product.
                 $.ajax({
                     type: 'POST',
@@ -32,7 +31,7 @@ $(document).ready(function () {
                         });
                     },
                     error: function (xhr, status, error) {
-                        console.log("pressed");
+                      
                         //                           $(this).attr("class", "glyphicon-minus");
                         //                         $(this).addClass("glyphicon-minus");
 
