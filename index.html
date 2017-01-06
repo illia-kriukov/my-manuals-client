@@ -1,445 +1,465 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>MyManuals</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 50px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TILLIT</title>
+    <meta name="description" content="Tillit is a webpage service that is used to manage all of home appliance manuals like kitchen stove fridge blender fridge." />
+    <meta name="keywords" content="manuals, device, tillit, home, repair fix, web, how to, devices" />
+    <meta name="author" content="Team Awesome" />
 
-    </style>
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Elegant Icons -->
 
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="css/iziToast.css" rel="stylesheet" />
+    <link href="assets/css/pricestyle.css" rel="stylesheet">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <link rel="shortcut icon" href="assets/images/ico/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Izi plugin for alert popup -->
+    <link rel="stylesheet" href="assets/css/iziToast.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!--left menu-->
-                <ul class="nav navbar-nav">
-                    <li class="dropdown"><a class="navbar-brand" href="./index.html">Home</a></li>
-                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Categories  <span class="caret"></span></a>
-
-                        <!-- drop down menu-->
-
-                        <ul id="menuCategories" class="dropdown-menu " role="menu">
-                            <li>
-                                <a id="allCategories"> </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div id="navbar" class="navbar-collapse collapse">
-
-                <form id="regForm" class="navbar-form navbar-right" role="form">
-
-                    <div id="UserExit">
-                
-                    </div>
-                 
-                   
-
-                    <div id="UserEnter">
-                        <div class="form-group">
-                            <input id="fpUsername" type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input id="fpPassword" type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
-                        
-                        <div class="btn-group dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <span class="hidden-sm hidden-xs">Register&nbsp;</span>
-                                <i class="fa fa-angle-down"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
-                                <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </form>
-            </div>
-          
-            
-            <!--/.navbar-collapse -->
+    <!-- Preloader -->
+    <div id="tt-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
         </div>
-    </nav>
+    </div>
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input id="searchBox" type="search" value="" placeholder="type product name" />
+        </form>
+         <button id="searchButton" class="btn btn-primary" >Search</button>
+    </div>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="assets/images/log-01.png" alt=""></a>
+                </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div id="mainSearchBox" class="jumbotron">
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
 
-        <!--        Main search box-->
-        <div  class="container">
-            
-            <div class="row">
-                <h2 id="searchBoxHeader">Find all your items here</h2>
-                <div id="custom-search-input">
-                    <div class="input-group col-md-6 col-md-offset-3">
-                        <input id="searchBox" type="text" class="  search-query form-control" placeholder="Search" />
-                        <span class="input-group-btn">
-                                    <button id="searchButton" class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
+                        <li> <a>Categories <span class="caret"></span> </a>
+                            <ul id="menuCategories" class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="allcategories"> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#company">Company</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#modallogin">Sign In</a></li>
+                        <li>
+                            <a href="#" id="topsearchbutton"> <span class="glyphicon glyphicon-search"></span></a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
+            <!-- .container -->
+        </nav>
+    </header>
+    <!-- End Navigation -->
+    <!-- Home Section -->
+
+
+    <section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+        <div class="intro">
+
+            <h1 id="tillit">Be organized with <span id="tillit">TILLIT</span></h1>
+
+            <h2 class="typed">The only place you ever have to visit for your household manuals.</h2>
+
         </div>
 
-
-    </div>
-
-    <!--    Results-->
-
-    <div id="searchResults" class="wrapper">
-        <table id="acrylic">
-            <thead>
-                <tr>
-                    <th id="heartFavorite"> </th>
-                    <th>Name</th>
-                    <th>Model</th>
-                    <th>Company</th>
-                    <th>Categories</th>
-                </tr>
-            </thead>
-            <tbody id="TableBody">
-
-            </tbody>
-        </table>
-    </div>
-
-
-
-
-
-
-    <!--        Some text we might show-->
-    <div class="container">
-        <!-- Example row of columns -->
-        <div id="marketingStuff" class="row">
-            <div class="col-md-4">
-                <h2>Find</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div>
-            <div class="col-md-4">
-                <h2>Store</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div>
-            <div class="col-md-4">
-                <h2>Profit</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
+        <div class="mouse-icon">
+            <div class="wheel"></div>
         </div>
-    </div>
+    </section>
+    <!-- End Home Section -->
 
-    <!--    Pricing Table-->
+    <h2 class="section-title wow fadeInUp section-padding">Simple as that</h2>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <img id="demo" src="assets/images/demo1.png">
+
+    </section>
 
 
-    <div id="tablePrices" class="container">
-        <h1 style="text-align:center;">Do you want more from your manuals? Click <strong>Join</strong> and worry no more.</h1>
-        <br>
-        <br>
 
-        <div class="sub_table">
+
+
+    <!-- Facts Section -->
+    <section id="facts" class="facts-section text-center" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+        <div class="tt-overlay-bg">
             <div class="container">
                 <div class="row">
-                    <div class="table_title">
-                        <p>Step One</p>
-                        <hr>
-                        <h1>Choose Your Plan</h1>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12">
-                        <div class="box-1 center">
-                            <div class="panel panel-success panel-pricing">
-                                <div class="panel-heading">
-                                    <h3>1 Month</h3>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <p><strong>$100</strong></p>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>10</strong>
-                                        <br> Fidelity Point</li>
-                                </ul>
-                                <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join1">JOIN</a> </div>
+                    <div class="col-md-12">
+                        <div class="count-wrap">
+                            <div class="col-sm-3 col-xs-6">
+                                <i class="fa fa-address-card-o"></i>
+                                <h3 class="timer">120</h3>
+                                <p>Registered Companies</p>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <i class="fa fa-file-text-o"></i>
+                                <h3 class="timer">1651</h3>
+                                <p>Available Manuals</p>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <i class="fa fa-users"></i>
+                                <h3 class="timer">251</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <i class="fa fa-commenting-o"></i>
+                                <h3 class="timer">3256</h3>
+                                <p>Helpfull Advices</p>
                             </div>
                         </div>
+                        <!-- /count-wrap -->
                     </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12">
-                        <div class="box-1 center">
-                            <div class="panel panel-success panel-pricing">
-                                <div class="panel-heading">
-                                    <h3>3 Month</h3>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <p><strong>$300</strong></p>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>30</strong>
-                                        <br> Fidelity Point</li>
-                                </ul>
-                                <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join2">JOIN</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12">
-                        <div class="box-1 center">
-                            <div class="panel panel-success panel-pricing">
-                                <div class="panel-heading">
-                                    <h3>6 Month</h3>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <p><strong>$600</strong></p>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>90</strong>
-                                        <br> Fidelity Point</li>
-                                </ul>
-                                <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join3">JOIN</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-xs-12">
-                        <div class="box-1 center">
-                            <div class="panel panel-success panel-pricing">
-                                <div class="panel-heading">
-                                    <h3>12 Month</h3>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <p><strong>$1200</strong></p>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>240</strong>
-                                        <br> Fidelity Point</li>
-                                </ul>
-                                <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join4">JOIN</a> </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- /.col-md-12 -->
                 </div>
+                <!-- /.row -->
             </div>
-            <div class="row" id="form_div">
+            <!-- /.container -->
+        </div>
+    </section>
+    <!-- End Facts Section -->
+
+
+    <!--    Pricing-->
+    <section id="pricing" class="section section-padding">
+        <div class="container">
+
+            <div class="pricing-plans">
+                <div class="wrap">
+
+
+
+                    <div class="pricing-grids">
+                        <div class="pricing-grid1">
+                            <div class="price-value">
+                                <h2><a href="#"> BASIC</a></h2>
+                                <h5><span>$ 0.00</span><lable> / month</lable></h5>
+                                <div class="sale-box">
+
+                                </div>
+
+                            </div>
+                            <div class="price-bg">
+                                <ul>
+                                    <li class="whyt"><a href="#">Find Manuals </a></li>
+                                    <li><a href="#">Dome some other st</a></li>
+                                    <li class="whyt"><a href="#">Acess Comments </a></li>
+                                    <li><a href="#">Acess</a></li>
+                                    <li class="whyt"><a href="#">Limited Support</a></li>
+                                </ul>
+                                <div class="cart1">
+                                    <a class="popup-with-zoom-anim" data-toggle="modal" data-target="#modalsignup" href="#small-dialog">Sign Up</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-grid2">
+                            <div class="price-value two">
+                                <h3><a href="#">STANDARD</a></h3>
+                                <h5><span>$ 29.99</span><lable> / month</lable></h5>
+                                <div class="sale-box two">
+
+                                </div>
+
+                            </div>
+                            <div class="price-bg">
+                                <ul>
+                                    <li class="whyt"><a href="#">10GB Disk Space </a></li>
+                                    <li><a href="#">20 Domain Names</a></li>
+                                    <li class="whyt"><a href="#">10 E-Mail Address </a></li>
+                                    <li><a href="#">100GB Monthly Bandwidth </a></li>
+                                    <li class="whyt"><a href="#">Fully Support</a></li>
+                                </ul>
+                                <div class="cart2">
+                                    <a class="popup-with-zoom-anim" data-toggle="modal" data-target="#modalsignup" href="#small-dialog">Sign Up</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-grid3">
+                            <div class="price-value three">
+                                <h4><a href="#">PREMIUM</a></h4>
+                                <h5><span>$ 49.99</span><lable> / month</lable></h5>
+                                <div class="sale-box three">
+
+                                </div>
+
+                            </div>
+                            <div class="price-bg">
+                                <ul>
+                                    <li class="whyt"><a href="#">50GB Disk Space </a></li>
+                                    <li><a href="#">50 Domain Names</a></li>
+                                    <li class="whyt"><a href="#">20 E-Mail Address </a></li>
+                                    <li><a href="#">300GB Monthly Bandwidth </a></li>
+                                    <li class="whyt"><a href="#">Dedicated Support</a></li>
+                                </ul>
+                                <div class="cart3">
+                                    <a class="popup-with-zoom-anim" data-toggle="modal" data-target="#modalsignup" href="#small-dialog">Sign Up</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"> </div>
+                        <!--pop-up-grid-->
+                        <div id="small-dialog" class="mfp-hide">
+                            <div class="pop_up">
+                                <div class="payment-online-form-left">
+                                    <form>
+                                        <h4><span class="shipping"> </span>Shipping</h4>
+                                        <ul>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}">
+                                            </li>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                                            </li>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}">
+                                            </li>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}">
+                                            </li>
+                                            <div class="clear"> </div>
+                                        </ul>
+                                        <div class="clear"> </div>
+                                        <ul class="payment-type">
+                                            <h4><span class="payment"> </span> Payments</h4>
+                                            <li><span class="col_checkbox">
+													<input id="3" class="css-checkbox1" type="checkbox">
+													<label for="3" name="demo_lbl_1" class="css-label1"> </label>
+													<a class="visa" href="#"> </a>
+													</span>
+
+                                            </li>
+                                            <li>
+                                                <span class="col_checkbox">
+														<input id="4" class="css-checkbox2" type="checkbox">
+														<label for="4" name="demo_lbl_2" class="css-label2"> </label>
+														<a class="paypal" href="#"> </a>
+													</span>
+                                            </li>
+                                            <div class="clear"> </div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}">
+                                            </li>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}">
+                                            </li>
+                                            <div class="clear"> </div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
+                                            <li>
+                                                <input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}">
+                                            </li>
+                                            <div class="clear"> </div>
+                                        </ul>
+                                        <ul class="payment-sendbtns">
+                                            <li>
+                                                <input type="reset" value="Cancel">
+                                            </li>
+                                            <li>
+                                                <input type="submit" value="Process order">
+                                            </li>
+                                        </ul>
+                                        <div class="clear"> </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--pop-up-grid-->
+                    </div>
+                    <div class="clear"> </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <h2 class="section-title wow fadeInUp">TILLIT Enterprise</h2>
+    <!-- Contact Section -->
+    <section id="company" class="contact-section section-padding">
+        <div class="container">
+
+
+            <div class="row">
                 <div class="container">
-                    <div class="order">
-                        <div class="table_title">
-                            <p>Step Two</p>
-                            <hr>
-                            <h1>Enter Your Order</h1>
-                        </div>
-                        <form method="post" action="">
-                            <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="row">
-                                    <div class="col-sm-8 col-md-8 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="Street Address" name="street_address">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-4 col-md-4 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="Suite Apt" name="suit_apt">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="City" name="city">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3 col-md-3 col-xs-12">
-                                        <p>
-                                            <select name="state">
-                                                <option class="active">State</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3 col-md-3 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="Zip Code" name="zip_code">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="Phone Number" name="phone_no">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <input type="email" placeholder="Email Address" name="email">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <p>
-                                        <input type="text" placeholder="First Name" name="fname">
-                                    </p>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <p>
-                                        <input type="text" placeholder="Last Name" name="lname">
-                                    </p>
-                                </div>
 
-                                <!--<button class="cn_btn">Continue</button>-->
-                                <input type="submit" class="cn_btn" name="submit" value="Continue" />
-                            </div>
-                        </form>
+                    <div class="row">
+                        <div class="col-sm-6 text-center-mobile">
+
+                            <h1 id="representativeregheader" class="white">Manage your company's manuals through your staff.</h1>
+
+                            <button id="repregisterbutton" data-toggle="modal" data-target="#modalrepsignup" class="sun-flower-button">Representative Registration</button>
+                        </div>
+
                     </div>
+
+
                 </div>
+
             </div>
         </div>
-        <div id="form_div1" class="row">
-            <div class="container">
-                <div class="order">
-                    <div class="table_title">
-                        <p>Step Three</p>
-                        <hr>
-                        <h1>Add a Payment Method </h1>
-                    </div>
-                    <form action="" method="post">
-                        <div class="col-sm-6 col-md-6 col-xs-12">
-                            <div class="row">
-                                <div class="col-sm-9 col-md-9 col-xs-12">
-                                    <p>
-                                        <input type="text" name="ac_number" placeholder="Credit Card / Debit Card Number ">
-                                    </p>
-                                </div>
-                                <div class="col-sm-3 col-md-3 col-xs-12">
-                                    <p>
-                                        <input type="text" name="cvv" placeholder="CVV">
-                                    </p>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <p>
-                                        <select name="month">
-                                            <option class="active">Month</option>
-                                            <option value="1">January</option>
-                                            <option value="2">Febuary</option>
-                                            <option value="3">March</option>
-                                            <option value="4">April</option>
-                                            <option value="5">May</option>
-                                            <option value="6">June</option>
-                                            <option value="7">July</option>
-                                            <option value="8">August</option>
-                                            <option value="9">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
-                                        </select>
-                                    </p>
-                                </div>
-                                <div class="col-sm-3 col-md-3 col-xs-12">
-                                    <p>
-                                        <select name="year">
-                                            <option class="active">Year</option>
-                                            <option value="1">2015</option>
-                                            <option value="2">2016</option>
-                                        </select>
-                                    </p>
-                                </div>
-                                <div class="col-sm-3 col-md-3 col-xs-12">
-                                    <p>
-                                        <input type="text" name="zip" placeholder="Billing Zip">
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-xs-12">
-                            <div class="r_pay">
-                                <!-- PayPal Logo -->
-                                <table border="0" cellpadding="10" cellspacing="0" align="center">
-                                    <tr>
-                                        <td align="center"></td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center">
-                                            <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!-- PayPal Logo -->
-                                <button>Get It</button>
-                                <button>Cancel / Remove From Cart</button>
-                            </div>
+    </section>
 
-                        </div>
-                    </form>
-                </div>
+    <section>
+
+
+    </section>
+
+    <!--    User Signup-->
+    <div class="modal fade" id="modalsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <h1 class="white">Welcome to Tillit</h1>
+                <form action="" class="popup-form">
+                    <input id="consumerFullName" type="text" class="form-control form-white" placeholder="Full Name">
+                    <input id="consumerEmail" type="text" class="form-control form-white" placeholder="Email Address">
+                    <input id="consumerPassword" type="password" class="form-control form-white" placeholder="Password">
+
+
+                    <button id="registerbtn" type="submit" class="sun-flower-button">Register</button>
+                </form>
             </div>
         </div>
+    </div>
 
+    <!--    Representative Signup-->
+    <div class="modal fade" id="modalrepsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <h3 class="white">Representative Registration</h3>
+                <form action="" class="popup-form">
+                    <input id="repFullName" type="text" class="form-control form-white" placeholder="Full Name">
+                    <input id="repEmail" type="text" class="form-control form-white" placeholder="Email Address">
+                    <input id="repPassword" type="text" class="form-control form-white" placeholder="Password">
+                    <input id="repMasterEmail" type="text" class="form-control form-white" placeholder="Company Email">
+                    <input id="repMasterPassword" type="password" class="form-control form-white" placeholder="Company Password">
+
+
+                    <button id="register-submit-btn"type="submit" class="sun-flower-button">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--    Login-->
+    <div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <h3 class="white">Welcome back</h3>
+                <form action="" class="popup-form">
+                    <input id="fpUsername" type="text" class="form-control form-white" placeholder="Email Address">
+                    <input id="fpPassword" class="form-control form-white" type="password" placeholder="Password">
+                    <button id="fpSignIN" type="submit" class="btn btn-submit">Enter</button>
+                </form>
+            </div>
+        </div>
     </div>
 
 
+    <!-- Footer Section -->
+    <footer class="footer-wrapper">
+        <div class="container">
 
-
-
-
-
-
-    <footer id="indexFooter" class="footer navbar navbar-fixed-bottom">
-        <img id='fpLogo' src="img/logo.png" alt="Smiley face" height="6%" width="6%">
-        <p id='fpCopyright'>&copy;Team A(wesome) 2016</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright text-center">
+                        <p>&copy; Team Awesome 2016 - LNU. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-
-    <!-- JS files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/iziToast.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/sessionHandle.js"></script>
-    <script src="js/userLogout.js"></script>
-    <script src="js/searchByName.js"></script>
-    <script src="js/userInfo.js"></script>
-    <script src="js/subscription.js"></script>
-    <script src="js/favoriteProduct.js"></script>
+    <!-- End Footer Section -->
 
 
+    <!-- Scroll-up -->
+    <div class="scroll-up">
+        <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
 
-
-
+    <!-- Javascript files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/iziToast.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+   
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/consumerSignUp.js"></script>
+      <script src="assets/js/representativeSignUp.js"></script>
+     <script src="assets/js/externalSearch.js"></script>
 </body>
 
 </html>

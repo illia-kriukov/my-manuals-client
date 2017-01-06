@@ -1,164 +1,127 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>My manuals</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 50px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TILLIT</title>
+    <meta name="description" content="Tillit is a webpage service that is used to manage all of home appliance manuals like kitchen stove fridge blender fridge." />
+    <meta name="keywords" content="manuals, device, tillit, home, repair fix, web, how to, devices" />
+    <meta name="author" content="Team Awesome" />
 
-    </style>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
-    <link href="css/iziToast.css" rel="stylesheet" />
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Elegant Icons -->
+
+    <link href="assets/css/pricestyle.css" rel="stylesheet">
+    
+<!--
+        New Product CSS
+       <link rel="stylesheet" href="assets/css/newproduct.css">
+-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <link rel="shortcut icon" href="assets/images/ico/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Izi plugin for alert popup -->
+    <link rel="stylesheet" href="assets/css/iziToast.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+ 
 </head>
 
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body id="tablebody">
+    <!-- Preloader -->
+    <div id="tt-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+              <input id="searchBox" type="search" value="" placeholder="type product name" />
+          
+        </form>
+        <button id="searchButton" class="btn btn-primary" >Search</button>
+    </div>
+    <!-- Navigation -->
+    <header id="newProductHeader" class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="homeButton" href="index.html"><img src="assets/images/log-01.png" alt=""></a>
+                </div>
 
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-nav">
-                    <li class="dropdown"><a id="homeButton" class="navbar-brand" href="./index.html">Home</a></li>
-                    <li class="dropdown"><a class=" navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
-
-                        <!-- drop down menu-->
-
-                        <ul id="menuCategories" class="dropdown-menu " role="menu">
-                            <li>
-                                <a id="allCategories"> </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-
-
-
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-
-                <form id="userPanel" class="navbar-right" role="form">
-
-                    <ul id="userRightProfile" class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                        <li> <a>Categories <span class="caret"></span> </a>
+                            <ul id="menuCategories" class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="allcategories"> </a>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                     
+                        <li>
+                            <a href="#" id="topsearchbutton"> <span class="glyphicon glyphicon-search"></span></a>
+                        </li>
+                           <li id="userID" class="dropdown">
                             <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span> <span class="caret"></span></a>
-                            <ul id="rightListItems" class="dropdown-menu">
+                            <ul class="dropdown-menu">
+                               
                                 <li><a href="#">Prefferences</a></li>
                                 <li class="divider"></li>
                                 <li><a id="userLogout" href="#">Sign Out</a></li>
                             </ul>
                         </li>
+
                     </ul>
-                </form>
-
-                <div id="topSearchBar" class="input-group col-md-6">
-                    <input id="searchBox" type="text" class=" search-query form-control" placeholder="Search" name="q">
-                    <div class="input-group-btn">
-                        <button id="searchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
                 </div>
-
-                <form id="regForm" class="navbar-form navbar-right" role="form">
-
-                    <div id="UserExit">
-
-                        <!--                        <button id="userLogout" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Cred">Log out</button>-->
-                    </div>
-                    <div id="UserEnter">
-                        <div class="form-group">
-                            <input id="fpUsername" type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input id="fpPassword" type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button id="fpSignIN" type="submit" class="btn btn-success" data-toggle="modal" data-target="#Cred">Sign in</button>
-                        <div class="btn-group dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <span class="hidden-sm hidden-xs">Register&nbsp;</span>
-                                <i class="fa fa-angle-down"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="consumer-signup.html"><i class="fa fa-male"></i>  Consumer</a></li>
-                                <li><a href="representative-signup.html"><i class="fa fa-user-o"></i>  Representative</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
             </div>
-            <!--/.navbar-collapse -->
-        </div>
-    </nav>
+            <!-- .container -->
+        </nav>
+    </header>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Product List </h1>
-            <p id="productListMarketingParagraph">Browse through the products listed in our website.</p>
-        </div>
-    </div>
 
+
+
+
+<section  class="section section-padding">
+  
     <div class="container">
-        <!--<hr>-->
-    </div>
-
-
-    <!--    Imran center this one-->
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-9 col-lg-offset-3">
-                    <div class="form-group col-md-2">
-                        <label>Categories</label>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <select id="category" required class="selectpicker" data-width="100%" multiple></select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <button class="btn btn-success" id="btnfilter" type="submit">
-                            Filter
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+     
+   <div class="col-md-12">
                 <!--                <table id="ProductTabl" cellspacing="0" class="display table" width="100%">-->
                 <table id="acrylic">
-
                     <thead>
                         <tr>
                             <th id="heartFavorite"></th>
@@ -172,270 +135,47 @@
                 </table>
                 <p>
             </div>
-        </div>
-        <hr>
-        <!--    Pricing Table-->
+</div>
 
-
-        <div id="tablePrices" class="container">
-            <h1 style="text-align:center;">Do you want more from your manuals? Click <strong>Join</strong> and worry no more.</h1>
-            <br>
-            <br>
-
-            <div class="sub_table">
-                <div class="container">
-                    <div class="row">
-                        <div class="table_title">
-                            <p>Step One</p>
-                            <hr>
-                            <h1>Choose Your Plan</h1>
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-xs-12">
-                            <div class="box-1 center">
-                                <div class="panel panel-success panel-pricing">
-                                    <div class="panel-heading">
-                                        <h3>1 Month</h3>
-                                    </div>
-                                    <div class="panel-body text-center">
-                                        <p><strong>$100</strong></p>
-                                    </div>
-                                    <ul class="list-group text-center">
-                                        <li class="list-group-item"><strong>10</strong>
-                                            <br> Fidelity Point</li>
-                                    </ul>
-                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join1">JOIN</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-xs-12">
-                            <div class="box-1 center">
-                                <div class="panel panel-success panel-pricing">
-                                    <div class="panel-heading">
-                                        <h3>3 Month</h3>
-                                    </div>
-                                    <div class="panel-body text-center">
-                                        <p><strong>$300</strong></p>
-                                    </div>
-                                    <ul class="list-group text-center">
-                                        <li class="list-group-item"><strong>30</strong>
-                                            <br> Fidelity Point</li>
-                                    </ul>
-                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join2">JOIN</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-xs-12">
-                            <div class="box-1 center">
-                                <div class="panel panel-success panel-pricing">
-                                    <div class="panel-heading">
-                                        <h3>6 Month</h3>
-                                    </div>
-                                    <div class="panel-body text-center">
-                                        <p><strong>$600</strong></p>
-                                    </div>
-                                    <ul class="list-group text-center">
-                                        <li class="list-group-item"><strong>90</strong>
-                                            <br> Fidelity Point</li>
-                                    </ul>
-                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join3">JOIN</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-xs-12">
-                            <div class="box-1 center">
-                                <div class="panel panel-success panel-pricing">
-                                    <div class="panel-heading">
-                                        <h3>12 Month</h3>
-                                    </div>
-                                    <div class="panel-body text-center">
-                                        <p><strong>$1200</strong></p>
-                                    </div>
-                                    <ul class="list-group text-center">
-                                        <li class="list-group-item"><strong>240</strong>
-                                            <br> Fidelity Point</li>
-                                    </ul>
-                                    <div class="panel-footer"> <a class="btn btn-lg btn-block btn-success priceBtn" id="join4">JOIN</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="form_div">
-                    <div class="container">
-                        <div class="order">
-                            <div class="table_title">
-                                <p>Step Two</p>
-                                <hr>
-                                <h1>Enter Your Order</h1>
-                            </div>
-                            <form method="post" action="">
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="row">
-                                        <div class="col-sm-8 col-md-8 col-xs-12">
-                                            <p>
-                                                <input type="text" placeholder="Street Address" name="street_address">
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-4 col-md-4 col-xs-12">
-                                            <p>
-                                                <input type="text" placeholder="Suite Apt" name="suit_apt">
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-xs-12">
-                                            <p>
-                                                <input type="text" placeholder="City" name="city">
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-xs-12">
-                                            <p>
-                                                <select name="state">
-                                                    <option class="active">State</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-xs-12">
-                                            <p>
-                                                <input type="text" placeholder="Zip Code" name="zip_code">
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-xs-12">
-                                            <p>
-                                                <input type="text" placeholder="Phone Number" name="phone_no">
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-xs-12">
-                                            <p>
-                                                <input type="email" placeholder="Email Address" name="email">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="First Name" name="fname">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <input type="text" placeholder="Last Name" name="lname">
-                                        </p>
-                                    </div>
-
-                                    <!--<button class="cn_btn">Continue</button>-->
-                                    <input type="submit" class="cn_btn" name="submit" value="Continue" />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="form_div1" class="row">
-                <div class="container">
-                    <div class="order">
-                        <div class="table_title">
-                            <p>Step Three</p>
-                            <hr>
-                            <h1>Add a Payment Method </h1>
-                        </div>
-                        <form action="" method="post">
-                            <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="row">
-                                    <div class="col-sm-9 col-md-9 col-xs-12">
-                                        <p>
-                                            <input type="text" name="ac_number" placeholder="Credit Card / Debit Card Number ">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3 col-md-3 col-xs-12">
-                                        <p>
-                                            <input type="text" name="cvv" placeholder="CVV">
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                        <p>
-                                            <select name="month">
-                                                <option class="active">Month</option>
-                                                <option value="1">January</option>
-                                                <option value="2">Febuary</option>
-                                                <option value="3">March</option>
-                                                <option value="4">April</option>
-                                                <option value="5">May</option>
-                                                <option value="6">June</option>
-                                                <option value="7">July</option>
-                                                <option value="8">August</option>
-                                                <option value="9">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3 col-md-3 col-xs-12">
-                                        <p>
-                                            <select name="year">
-                                                <option class="active">Year</option>
-                                                <option value="1">2015</option>
-                                                <option value="2">2016</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3 col-md-3 col-xs-12">
-                                        <p>
-                                            <input type="text" name="zip" placeholder="Billing Zip">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-md-3 col-xs-12">
-                                <div class="r_pay">
-                                    <!-- PayPal Logo -->
-                                    <table border="0" cellpadding="10" cellspacing="0" align="center">
-                                        <tr>
-                                            <td align="center"></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center">
-                                                <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- PayPal Logo -->
-                                    <button>Get It</button>
-                                    <button>Cancel / Remove From Cart</button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    </section>
 
 
 
+    <!-- Scroll-up -->
+    <div class="scroll-up">
+        <a href="#home"><i class="fa fa-angle-up"></i></a>
     </div>
-    <!-- /container -->
-    <!-- JS files -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Javascript files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/iziToast.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/listCategories.js"></script>
-    <script src="js/listProducts.js"></script>
-    <script src="js/favoriteProduct.js"></script>
-    <script src="js/userInfo.js"></script>
-    <script src="js/userLogout.js"></script>
-    <script src="js/mainProducts.js"></script>
-    <script src="js/sessionHandle.js"></script>
-    <script src="js/searchByName.js"></script>
+    <script src="assets/js/iziToast.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/consumerSignUp.js"></script>
+      <script src="assets/js/representativeSignUp.js"></script>
+     <script src="assets/js/newProduct.js"></script>
+    
+      <script src="assets/js/listCategories.js"></script>
+    <script src="assets/js/userInfo.js"></script>
+    <script src="assets/js/userLogout.js"></script>
+       <script src="assets/js/sessionHandle.js"></script>
+    <script src="assets/js/mainProducts.js"></script>
+    <script src="assets/js/listProducts.js"></script>
+     <script src="assets/js/externalSearch.js"></script>
+         <script src="assets/js/favoriteProduct.js"></script>
 
-
+    
 </body>
 
 </html>

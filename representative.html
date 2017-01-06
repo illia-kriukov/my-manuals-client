@@ -1,109 +1,129 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>My manuals</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TILLIT</title>
+    <meta name="description" content="Tillit is a webpage service that is used to manage all of home appliance manuals like kitchen stove fridge blender fridge." />
+    <meta name="keywords" content="manuals, device, tillit, home, repair fix, web, how to, devices" />
+    <meta name="author" content="Team Awesome" />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 50px;
-        }
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-    </style>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="css/iziToast.css" rel="stylesheet" />
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Elegant Icons -->
+
+    <link href="assets/css/pricestyle.css" rel="stylesheet">
+    
+<!--
+        New Product CSS
+       <link rel="stylesheet" href="assets/css/newproduct.css">
+-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <link rel="shortcut icon" href="assets/images/ico/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Izi plugin for alert popup -->
+    <link rel="stylesheet" href="assets/css/iziToast.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+ 
 </head>
 
-<body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body id="tablebody">
+    <!-- Preloader -->
+    <div id="tt-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input id="searchBox" type="search" value="" placeholder="type product name" />
+          
+        </form>
+         <button id="searchButton" class="btn btn-primary" >Search</button>
+    </div>
+    <!-- Navigation -->
+    <header id="newProductHeader" class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="homeButton" href="index.html"><img src="assets/images/log-01.png" alt=""></a>
+                </div>
 
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!--left menu-->
-                <ul class="nav navbar-nav">
-                    <li class="dropdown"><a id="homeButton" class="navbar-brand" href="./consumer.html">Home</a></li>
-                    <li class="dropdown"><a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="./products.html">Products  <span class="caret"></span></a>
-
-                        <!-- drop down menu-->
-
-                        <ul id="menuCategories" class="dropdown-menu " role="menu">
-                            <li>
-                                <a id="allCategories"> </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="navbar" class="navbar-collapse collapse">
-
-                <form class="navbar-right" role="form">
-
-                    <ul id="userRightProfile" class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                        <li> <a>Categories <span class="caret"></span> </a>
+                            <ul id="menuCategories" class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="allcategories"> </a>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                     
+                        <li>
+                            <a href="#" id="topsearchbutton"> <span class="glyphicon glyphicon-search"></span></a>
+                        </li>
+                           <li class="dropdown">
                             <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span> <span class="caret"></span></a>
-                            <ul  class="dropdown-menu">
-                                <li><a href="./new-product.html">Upload Manual</a></li>
+                            <ul id="navRight" class="dropdown-menu">
+<!--                                <li><a href="./new-product.html">Upload Manual</a></li>-->
                                 <li><a href="#">Prefferences</a></li>
                                 <li class="divider"></li>
                                 <li><a id="userLogout" href="#">Sign Out</a></li>
                             </ul>
                         </li>
+
                     </ul>
-                </form>
-
-
-
-                
-    <div id="topSearchBar" class="input-group col-md-6">
-        <input id="searchBox" type="text" class=" search-query form-control" placeholder="Search" name="q">
-        <div class="input-group-btn">
-            <button id="searchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-        </div>
-    </div>
-
-
-
+                </div>
             </div>
+            <!-- .container -->
+        </nav>
+    </header>
 
 
-            <!--/.navbar-collapse -->
-        </div>
-    </nav>
-    
-     <div class="jumbotron">
+
+
+
+<section  class="section section-padding">
+  
+    <div class="container">
+       
+   <div class="jumbotron col-md-12 col-md-offset-2">
+      
         <div class="container">
-            <h1>Available products </h1>
-            <p>Browse through all the available products.</p>
+        
+            <p>Here you can browse through all the available products from your company.</p>
         </div>
     </div>
 
@@ -135,17 +155,43 @@
         </div>
 
     </div>
-    <!-- JS files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/vendor/iziToast.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/userInfo.js"></script>
-    <script src="js/userLogout.js"></script>
-    <script src="js/sessionHandle.js"></script>
-    <script src="js/getRepresentativeProducts.js"></script>
-    <script src="js/searchByName.js"></script>
+</div>
 
+    </section>
+
+
+
+    <!-- Scroll-up -->
+    <div class="scroll-up">
+        <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    <!-- Javascript files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/iziToast.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/consumerSignUp.js"></script>
+      <script src="assets/js/representativeSignUp.js"></script>
+     <script src="assets/js/newProduct.js"></script>
+    
+<!--      <script src="assets/js/listCategories.js"></script>-->
+    <script src="assets/js/userInfo.js"></script>
+    <script src="assets/js/userLogout.js"></script>
+       <script src="assets/js/sessionHandle.js"></script>
+       <script src="assets/js/getRepresentativeProducts.js"></script>
+        <script src="assets/js/externalSearch.js"></script>
 
 </body>
 

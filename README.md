@@ -1,2 +1,2 @@
-# my-manuals-client
-Front-end part of the "My Manuals" application by Team A. Autumn 2016.
+This is the version 3 of our Visual Design for Tillit.
+Changes that were made were mostly around UX
