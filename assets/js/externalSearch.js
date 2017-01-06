@@ -9,6 +9,7 @@ $(document).ready(function () {
          $("#search").removeClass("open");
            window.location.href = "./result.html";
             window.localStorage.setItem('externalSearch', $('#searchBox').val());
+            $('#searchBox').val()== "";
         }else{
              iziToast.info({
                 title: 'Sorry',

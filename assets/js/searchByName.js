@@ -7,14 +7,14 @@ $(document).ready(function () {
   var searchTerm = window.localStorage.getItem('externalSearch');
 
 //    $('#searchButton').on('click', function () {   });
-        if ($('#searchBox').val() == "") {
-            $('#acrylic').hide();
-            iziToast.info({
-                title: 'Hello',
-                message: 'Cant perform search without a name',
-            });
-        
-        }
+//        if ($('#searchBox').val() == "") {
+//            $('#acrylic').hide();
+//            iziToast.info({
+//                title: 'Hello',
+//                message: 'Cant perform search without a name',
+//            });
+//        
+//        }
    
   if (authority == "ROLE_USER"){
       //perform search with query and header bearer
