@@ -82,6 +82,11 @@ $(document).ready(function () {
                     $.each(product.categories, function (index1, category) {
                         var span = $('<span class="pCategories">' + " " + category.name + '</span>').appendTo(categoriesTd);
                     });
+                    if (authority == "ROLE_ADMIN") {
+                        $("#forEdit").show();
+                        var editurl = "./edit-product.html?id=" + product.id;
+                        var td = $('<td><a href="' + editurl + '" class="btn btn-primary"><i class="fa fa-edit"></i> Edit </a></td>').appendTo(tr);
+                    }
                 });
             }
         });

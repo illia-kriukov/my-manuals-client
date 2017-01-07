@@ -25,6 +25,8 @@
     <!-- Responsive CSS -->
     <link href="assets/css/responsive.css" rel="stylesheet">
     <!-- Elegant Icons -->
+    <!--Rating Css-->
+    <link href="assets/css/rating.css" rel="stylesheet">
 
     <!--    Ribbon CSS-->
     <link href="assets/css/ribbon.css" rel="stylesheet" />
@@ -113,7 +115,20 @@
         </nav>
     </header>
 
+    <div class="introHeader">
+        <div class="container">
+            <ul id="productInformation">
+                <li>Product Name:  <span id="name"></span></li>
 
+                <li>Product Model:  <span id="model"></span></li>
+
+                <li>Product Categories: <span id="categories"></span></li>
+
+                <li>Company Name: <span id="CompName"></span></li>
+            </ul>
+
+        </div>
+    </div>
 
     <section class="section section-padding">
         <div class="container">
@@ -122,38 +137,15 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
 
-                    <div class="item active">
-                        <div class="board">
-                            <div class="carousel-caption">
-                                <div  class="col-md-12 col-md-offset-3">
-                                    <ul id="productInformation">
-                                    <li>Product Name:  <span id="name"></span></li>
-                                   
-                                    <li>Product Model:  <span id="model"></span></li>
-                                   
-                                    <li>Product Categories: <span id="categories"></span></li>
-                                  
-                                    <li>Company Name: <span id="CompName"></span></li>
-                                   </ul>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- End Item -->
 
-
-
-
-
-
-                    <div class="item">
+                    <div class="item active">
                       
                          <div class="board">
                             <div class="carousel-caption">
                                 <div id="productManual">
                                 <label>Links to Manuals:</label>
-                                            <p id="LinksManual">
+                                   <p id="LinksManual">
                                 </div>
                             </div>
                         </div>
@@ -189,10 +181,10 @@
 
 
                 <ul class="nav nav-pills nav-justified">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Product Information</a></li>
-                    <li data-target="#myCarousel" data-slide-to="1"><a href="#">Manual</a></li>
-                    <li data-target="#myCarousel" data-slide-to="2"><a href="#">Video Tutorials</a></li>
-                    <li data-target="#myCarousel" data-slide-to="3"><a href="#">Subscription</a></li>
+                    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Product Information</a></li>-->
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"><a href=" #">Manual</a></li>
+                    <li data-target="#myCarousel" data-slide-to="1"><a href="#">Video Tutorials</a></li>
+                    <li class="subscriptions" data-target="#myCarousel" data-slide-to="2"><a class="subscriptions" href="#" >Subscription</a></li>
                 </ul>
 
 
@@ -200,11 +192,29 @@
             <!-- End Carousel -->
         </div>
     </section>
+    
+    <div id="ProductComments" class="container">
+        <div class="col-md-12 col-lg-12 col-sm-12" style="border-bottom: 1px solid #eee;margin-bottom:3%;">
+            <h3 style="border-bottom: 1px solid #eee;">Comments</h3>
+            <div id="allquestionAns">
 
-
+            </div>         
+            <div style="display:none;text-align:left" id="questionError" class="alert alert-danger">
+                Validation error<br>
+                1. Must type your question
+            </div>
+            <form class="form-horizontal" id="repQuestionForm" onsubmit="return submitQuestion();">
+                <div class="form-group">                 
+                    <h3 class="sbold blog-comments-title">Leave A Comment</h3>
+                    <textarea id="custQuestion" name="custQuestion" rows="5" class="form-control c-square" required="required" placeholder="Type your question"></textarea>
+                </div>
+                <div class="form-group" style="float:right">
+                    <button type="submit" id="submit-btn-question" class="btn btn-success uppercase">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <section class="section section-padding"></section>
-
-
     <div class="modal fade" tabindex="-1" role="dialog" id="commentsModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -247,7 +257,7 @@
     <!-- /.modal -->
 
 
-
+    <input type="hidden" id="ProdId" />
     <!-- Scroll-up -->
     <div class="scroll-up">
         <a href="#home"><i class="fa fa-angle-up"></i></a>
@@ -275,13 +285,14 @@
 
     <script src="assets/js/userInfo.js"></script>
     <script src="assets/js/userLogout.js"></script>
-    <script src="assets/js/sessionHandle.js"></script>
+   
 
     <script src="assets/js/detailCarousel.js"></script>
     <script src="assets/js/productDetail.js"></script>
+   
     <script src="assets/js/consumerProductSubscribe.js"></script>
     <script src="assets/js/externalSearch.js"></script>
-
+ <script src="assets/js/sessionHandle.js"></script>
 </body>
 
 
