@@ -28,6 +28,11 @@ $(document).ready(function () {
 
     if (length > 0) {
         if (authority == "ROLE_ADMIN") {
+        console.log("The role is admin");
+           
+            $(".subscriptions").hide();
+            $(".ratingandcomments").hide();
+            
 
             $("#tablePrices").hide();
             $("#homeButton").attr("href", "./representative.html");
