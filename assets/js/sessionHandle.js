@@ -47,7 +47,8 @@ $(document).ready(function () {
 
 
 
-        } else {
+        } 
+        else {
             if (window.location.pathname == "/C:/xampp/htdocs/repo/index.html") {
                 window.location.href = "./consumer.html";
             }
@@ -59,11 +60,8 @@ $(document).ready(function () {
             
         }
 
- if (authority == "ROLE_USER"){
-     console.log("its a user");
-      $(".ratingandcomments").show();
-     
- }
-    } 
+    } else{
+         $(".subscriptions").hide();
+    }
 
 });

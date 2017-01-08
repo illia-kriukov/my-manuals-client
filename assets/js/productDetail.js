@@ -4,7 +4,6 @@ $(function () {
     });
 });
 $(document).ready(function ($) {
-    
     var url = window.location.href;
     var pid = location.search.split('id=')[1];
     var authority = window.localStorage.getItem('authority');
@@ -38,8 +37,7 @@ $(document).ready(function ($) {
     }
 
     //Show Product Detail
-    //Throught the query of responses if the Role is USER only then show the comment icon and the star icons
-    if(authority=="ROLE_USER"){
+    //if this is USER
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/product?productId=' + pid,
@@ -98,7 +96,7 @@ $(document).ready(function ($) {
             });
         }
     });
-    }
+    
     
     //Get Manual and Video Rating value
     function getRating(rTypeid, mID) {

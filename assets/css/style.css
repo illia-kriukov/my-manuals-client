@@ -2379,10 +2379,15 @@ table#acrylic {
 }
 
 #productInformation {
-    display: block;
+    background: white;
+     width: 20%;
+    height: auto;
+    max-width: 250px;
+    min-width: 100px;
+   
     text-align: left;
     font-size: 20px;
-    padding-bottom: 20%;
+  border-radius: 10px;
 }
 
 #productManual {
@@ -2423,4 +2428,16 @@ table#acrylic {
 display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.topText {
+    font-size: 22px;
+}
+
+.productImage {
+    width: 20%;
+    height: auto;
+    max-width: 250px;
+    min-width: 100px;
+   
 }
