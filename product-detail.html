@@ -13,7 +13,6 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
     <!-- Font Awesome CSS -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
     <!-- Animate css -->
@@ -29,6 +28,7 @@
     <link href="assets/css/rating.css" rel="stylesheet">
 
     <!--    Ribbon CSS-->
+    
     <link href="assets/css/ribbon.css" rel="stylesheet" />
     <!--    Pricestyle css-->
     <link href="assets/css/pricestyle.css" rel="stylesheet">
@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
     <link rel="shortcut icon" href="assets/images/ico/favicon.png">
     
-    <!--    FontAwesome-->
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Izi plugin for alert popup -->
     <link rel="stylesheet" href="assets/css/iziToast.css">
@@ -115,8 +115,14 @@
         </nav>
     </header>
 
+       <div class="jumbotron"> 
+       
+       <img class="jumbotronImages" src="assets/images/cards-01.png">
+       <p class="centeredParagraph">Here you can find all the details about your product.</p>
+        </div>
     <div class="introHeader">
         <div class="container">
+            
             <ul id="productInformation">
                 <li>Product Name:  <span id="name"></span></li>
 
@@ -193,27 +199,6 @@
         </div>
     </section>
     
-    <div id="ProductComments" class="container">
-        <div class="col-md-12 col-lg-12 col-sm-12" style="border-bottom: 1px solid #eee;margin-bottom:3%;">
-            <h3 style="border-bottom: 1px solid #eee;">Comments</h3>
-            <div id="allquestionAns">
-
-            </div>         
-            <div style="display:none;text-align:left" id="questionError" class="alert alert-danger">
-                Validation error<br>
-                1. Must type your question
-            </div>
-            <form class="form-horizontal" id="repQuestionForm" onsubmit="return submitQuestion();">
-                <div class="form-group">                 
-                    <h3 class="sbold blog-comments-title">Leave A Comment</h3>
-                    <textarea id="custQuestion" name="custQuestion" rows="5" class="form-control c-square" required="required" placeholder="Type your question"></textarea>
-                </div>
-                <div class="form-group" style="float:right">
-                    <button type="submit" id="submit-btn-question" class="btn btn-success uppercase">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
     <section class="section section-padding"></section>
     <div class="modal fade" tabindex="-1" role="dialog" id="commentsModal">
         <div class="modal-dialog" role="document">
@@ -270,6 +255,7 @@
     <script src="assets/js/jquery.sticky.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+    
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script src="assets/js/iziToast.min.js"></script>
@@ -278,7 +264,7 @@
     <script src="assets/js/typewriter.js"></script>
     <script src="assets/js/jquery.inview.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-
+    
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/base.js"></script>
     <script src="assets/js/scripts.js"></script>
@@ -286,13 +272,13 @@
     <script src="assets/js/userInfo.js"></script>
     <script src="assets/js/userLogout.js"></script>
    
-
+ <script src="assets/js/sessionHandle.js"></script>
     <script src="assets/js/detailCarousel.js"></script>
     <script src="assets/js/productDetail.js"></script>
    
     <script src="assets/js/consumerProductSubscribe.js"></script>
     <script src="assets/js/externalSearch.js"></script>
- <script src="assets/js/sessionHandle.js"></script>
+
 </body>
 
 

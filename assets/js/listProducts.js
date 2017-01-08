@@ -91,6 +91,8 @@ $('#btnfilter').on('click', function () {
                         var categoriesTd = $('<td/>').appendTo(tr);
                         $.each(product.categories, function (index1, category) {
                             var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
+                            
+                         
                         });
                     });
                 }

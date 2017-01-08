@@ -34,6 +34,7 @@ $(document).ready(function () {
           
             },
             success: function (response) {
+             
                
                 var tableBody = $('#TableBody');
                 tableBody.empty();
@@ -57,8 +58,14 @@ $(document).ready(function () {
                     var td = $('<td>' + product.model + '</td>').appendTo(tr);
                     var td = $('<td>' + product.company.name + '</td>').appendTo(tr);
                     var categoriesTd = $('<td/>').appendTo(tr);
+                    
+                         
                     $.each(product.categories, function (index1, category) {
                         var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
+                            console.log(category.name);
+                           $('#categoryName').text =category.name;
+                           
+                            
                     });
                 });
             }
@@ -96,6 +103,9 @@ $(document).ready(function () {
                     var categoriesTd = $('<td/>').appendTo(tr);
                     $.each(product.categories, function (index1, category) {
                         var span = $('<span>' + " " + category.name + '</span>').appendTo(categoriesTd);
+                        
+//                         $('#categoryName')=  category.name;
+                            console.log("added category name");
                     });
                 });
             }

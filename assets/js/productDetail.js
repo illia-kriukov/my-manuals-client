@@ -4,6 +4,7 @@ $(function () {
     });
 });
 $(document).ready(function ($) {
+    
     var url = window.location.href;
     var pid = location.search.split('id=')[1];
     var authority = window.localStorage.getItem('authority');
@@ -37,6 +38,8 @@ $(document).ready(function ($) {
     }
 
     //Show Product Detail
+    //Throught the query of responses if the Role is USER only then show the comment icon and the star icons
+    if(authority=="ROLE_USER"){
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/product?productId=' + pid,
@@ -62,7 +65,7 @@ $(document).ready(function ($) {
                     manualss.append('<div class="ratingandcomments"><label style="text-align: center; ">&nbsp;<i class="fa fa-comment-o hovered" onclick="getComments(100,' + val.id + ')"></i></label></div><div class="col-lg-8 col-sm-12 col-md-4"><fieldset class="rating"><input type="radio" onclick="rateManual(100,5,' + val.id + ')" id="star5m' + val.id + '" name="ratingm' + val.id + '" value="5" /><label class="full" for="star5m' + val.id + '" title="Awesome - 5 stars"></label><input type="radio" onclick="rateManual(100,4,' + val.id + ')" id="star4m' + val.id + '" name="ratingm' + val.id + '" value="4" /><label class="full" for="star4m' + val.id + '" title="Pretty good - 4 stars"></label><input type="radio" onclick="rateManual(100,3,' + val.id + ')" id="star3m' + val.id + '" name="ratingm' + val.id + '" value="3" /><label class="full" for="star3m' + val.id + '" title="Meh - 3 stars"></label><input type="radio" onclick="rateManual(100,2,' + val.id + ')" id="star2m' + val.id + '" name="ratingm' + val.id + '" value="2" /><label class="full" for="star2m' + val.id + '" title="Kinda bad - 2 stars"></label><input type="radio" onclick="rateManual(100,1,' + val.id + ')" id="star1m' + val.id + '" name="ratingm' + val.id + '" value="1" /><label class="full" for="star1m' + val.id + '" title="Sucks big time - 1 star"></label></fieldset></div>');
                 }
                 else if (mId > 0) {
-                    manualss.append('<div id="ratingandcomments"><label style="text-align: center; ">&nbsp;<i class="fa fa-comment-o hovered" onclick="getComments(100,' + val.id + ')"></i></label></div><div class="col-lg-8 col-sm-12 col-md-4"><fieldset class="rating"><input type="radio" onclick="ratingUpdate(100,5,' + val.id + ')" id="star5m' + val.id + '" name="ratingm' + val.id + '" value="5" /><label class="full" for="star5m' + val.id + '" title="Awesome - 5 stars"></label><input type="radio" onclick="ratingUpdate(100,4,' + val.id + ')" id="star4m' + val.id + '" name="ratingm' + val.id + '" value="4" /><label class="full" for="star4m' + val.id + '" title="Pretty good - 4 stars"></label><input type="radio" onclick="ratingUpdate(100,3,' + val.id + ')" id="star3m' + val.id + '" name="ratingm' + val.id + '" value="3" /><label class="full" for="star3m' + val.id + '" title="Meh - 3 stars"></label><input type="radio" onclick="ratingUpdate(100,2,' + val.id + ')" id="star2m' + val.id + '" name="ratingm' + val.id + '" value="2" /><label class="full" for="star2m' + val.id + '" title="Kinda bad - 2 stars"></label><input type="radio" onclick="ratingUpdate(100,1,' + val.id + ')" id="star1m' + val.id + '" name="ratingm' + val.id + '" value="1" /><label class="full" for="star1m' + val.id + '" title="Sucks big time - 1 star"></label></fieldset></div>');
+                    manualss.append('<div class="ratingandcomments"><label style="text-align: center; ">&nbsp;<i class="fa fa-comment-o hovered" onclick="getComments(100,' + val.id + ')"></i></label></div><div class="col-lg-8 col-sm-12 col-md-4"><fieldset class="rating"><input type="radio" onclick="ratingUpdate(100,5,' + val.id + ')" id="star5m' + val.id + '" name="ratingm' + val.id + '" value="5" /><label class="full" for="star5m' + val.id + '" title="Awesome - 5 stars"></label><input type="radio" onclick="ratingUpdate(100,4,' + val.id + ')" id="star4m' + val.id + '" name="ratingm' + val.id + '" value="4" /><label class="full" for="star4m' + val.id + '" title="Pretty good - 4 stars"></label><input type="radio" onclick="ratingUpdate(100,3,' + val.id + ')" id="star3m' + val.id + '" name="ratingm' + val.id + '" value="3" /><label class="full" for="star3m' + val.id + '" title="Meh - 3 stars"></label><input type="radio" onclick="ratingUpdate(100,2,' + val.id + ')" id="star2m' + val.id + '" name="ratingm' + val.id + '" value="2" /><label class="full" for="star2m' + val.id + '" title="Kinda bad - 2 stars"></label><input type="radio" onclick="ratingUpdate(100,1,' + val.id + ')" id="star1m' + val.id + '" name="ratingm' + val.id + '" value="1" /><label class="full" for="star1m' + val.id + '" title="Sucks big time - 1 star"></label></fieldset></div>');
                     var $radios = $('input:radio[name=ratingm' + val.id + ']');
                     if ($radios.is(':checked') === false) {
                         $radios.filter('[value=' + mId + ']').prop('checked', true);
@@ -95,6 +98,8 @@ $(document).ready(function ($) {
             });
         }
     });
+    }
+    
     //Get Manual and Video Rating value
     function getRating(rTypeid, mID) {
         var reqURL; //1 method for both Manual and Video

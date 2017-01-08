@@ -27,11 +27,13 @@ $(document).ready(function () {
 
 
     if (length > 0) {
+        console.log(authority);
         if (authority == "ROLE_ADMIN") {
+            
         console.log("The role is admin");
-           
-            $(".subscriptions").hide();
             $(".ratingandcomments").hide();
+            $(".subscriptions").hide();
+           
             
 
             $("#tablePrices").hide();
@@ -57,7 +59,11 @@ $(document).ready(function () {
             
         }
 
-
+ if (authority == "ROLE_USER"){
+     console.log("its a user");
+      $(".ratingandcomments").show();
+     
+ }
     } 
 
 });

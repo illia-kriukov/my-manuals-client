@@ -2369,7 +2369,7 @@ table#acrylic {
 }
 
 #tablebody {
-    background-color: #12864f;
+    background-color: #CFDBE6;
 }
 
 .board {
@@ -2408,4 +2408,19 @@ table#acrylic {
 
 #TextBoxContainer {
     margin-top: 25px;
+}
+
+.centeredParagraph {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.jumbotronImages {
+    width: 10%;
+    min-width: 150px;
+    max-width: 250px;
+    height: auto;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
