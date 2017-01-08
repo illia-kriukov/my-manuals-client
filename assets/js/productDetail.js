@@ -53,7 +53,7 @@ $(document).ready(function ($) {
             $("#CompName").text(response.company.name);
             var categorie = $("#categories").empty();
             $.each(response.categories, function (name, val) {
-                categorie.append(val.name + ',');
+                categorie.append(val.name + ' ');
             });
             var manualss = $("#LinksManual").empty();
             $.each(response.manuals, function (name, val) {

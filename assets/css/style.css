@@ -2373,6 +2373,7 @@ table#acrylic {
 }
 
 .board {
+    margin-top: 25px;
     height: 500px;
     background: #4cc7bc;
     /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
@@ -2398,7 +2399,8 @@ table#acrylic {
 #productSubscribeList {
     text-align: left;
     font-size: 20px;
-    padding-bottom: 20%;
+    margin-bottom: 33%;
+    
 }
 
 
@@ -2440,4 +2442,34 @@ display: block;
     max-width: 250px;
     min-width: 100px;
    
+}
+
+.productbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin-bottom:10px;
+	-webkit-box-shadow: 0 8px 6px -6px  #999;
+	   -moz-box-shadow: 0 8px 6px -6px  #999;
+	        box-shadow: 0 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+
+#ProductSubscription {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
