@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -391,14 +391,15 @@
         <div class="modal-dialog">
             <div class="modal-content modal-popup">
                 <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-                <h3 class="white topText">Representative Registration</h3>
+                <h3 class="white topText">Representative Registration</h3>               
                 <form action="" class="popup-form">
+                    <div style="display:none;" id="errordivs" class="alert alert-danger">
+                    </div>
                     <input id="repFullName" type="text" class="form-control form-white" placeholder="Full Name">
                     <input id="repEmail" type="text" class="form-control form-white" placeholder="Email Address">
-                    <input id="repPassword" type="text" class="form-control form-white" placeholder="Password">
+                    <input id="repPassword" type="password" class="form-control form-white" placeholder="Password">
                     <input id="repMasterEmail" type="text" class="form-control form-white" placeholder="Company Email">
                     <input id="repMasterPassword" type="password" class="form-control form-white" placeholder="Company Password">
-
 
                     <button id="register-submit-btn"type="submit" class="btn btn-primary">Register</button>
                 </form>

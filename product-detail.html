@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -204,7 +204,29 @@
             <!-- End Carousel -->
         </div>
     </section>
-    
+    <section class="section">
+        <div id="ProductComments" style="display:none;" class="container"><h1 style="border-bottom: 1px solid #eee;" class="pricetext ">Comments</h1>
+            <div class="col-md-12 col-lg-12 col-sm-12" >
+                
+                <div id="allquestionAns">
+
+                </div>             
+                <div style="display:none;text-align:left" id="questionError" class="alert alert-danger">
+                    Validation error<br>
+                    1. Must type your question
+                </div>
+                <form class="form-horizontal" id="repQuestionForm" style="margin-top: 2%;" onsubmit="return submitQuestion();">
+                    <div class="form-group">                      
+                        <h3 class="sbold blog-comments-title">Leave A Comment</h3>
+                        <textarea id="custQuestion" name="custQuestion" rows="5" class="form-control c-square" required="required" placeholder="Type your question"></textarea>
+                    </div>
+                    <div class="form-group" style="float:right">
+                        <button type="submit" id="submit-btn-question" class="btn btn-success uppercase">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     <section class="section section-padding"></section>
     <div class="modal fade" tabindex="-1" role="dialog" id="commentsModal">
         <div class="modal-dialog" role="document">
@@ -234,8 +256,7 @@
                                 <input class="form-control" placeholder="Type new comment here" id="newComment" />
                             </div>
                             <div class="form-group" style="text-align:center">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>                            
                             </div>
                         </div>
                     </form>

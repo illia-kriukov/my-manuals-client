@@ -36,9 +36,11 @@ $(document).ready(function () {
             success: function () {                
                 iziToast.success({
                     title: 'OK',
-                    message: 'Representative Successfully Added!',
+                    message: 'Representative Successfully Created!',
                 });
-                window.location.href = "index.html";
+                $('form :input').val('');
+                $("#modalrepsignup").hide();
+                //window.location.href = "index.html";
             },
             error: function (xhr, status, error) {              
                 var jsonResponseText = $.parseJSON(xhr.responseText);

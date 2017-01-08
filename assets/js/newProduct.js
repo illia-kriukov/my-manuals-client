@@ -37,6 +37,10 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function () {
+                iziToast.success({
+                    title: 'OK',
+                    message: 'Product Successfully Added!',
+                });
                 // Clear the form
                 $('form :input').val('');
                 return true;

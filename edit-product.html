@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -147,12 +147,14 @@
                     <div class="form-group">
                         <label>Manual <span style="color:red">*</span></label><br>
                         <span id="prodManuals"></span>
-                        <button type="button" id="nManualbtn" onclick="showNbtn(2)" class="btn btn-info">
-                            <span class="glyphicon glyphicon-plus"> Add New Manual</span>
-                        </button>
-                        <input id="file" name="file" style="display:none;" class="placeholder-no-fix" type="file" placeholder="Upload File" />
+                        <div id="fileUploadContainer">
+                            <!--File input will be added here -->
+                        </div>
+                        <button type="button" id="nManualbtn" onclick="addNewFile()" class="btn btn-info">
+                            <span class="glyphicon glyphicon-plus"> Upload New Manual</span>
+                        </button>                       
                     </div>
-                    <div class="form-actions">
+                    <div class="form-actions">                        
                         <button type="submit" id="submit-btn-prod" class="btn btn-success btn-block uppercase">Update</button>
                     </div>
                 </form>
@@ -182,8 +184,7 @@
                 <input type="hidden" id="cModalType" />
                 <input type="hidden" id="cModalReId" />
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                    <!--<a class="btn btn-danger btn-ok">Delete</a>-->
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>                    
                     <button class="btn btn-danger btn-ok">Delete</button>
                 </div>
             </div>

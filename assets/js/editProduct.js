@@ -50,7 +50,7 @@ $(document).ready(function ($) {
             });
             var manualss = $("#prodManuals").empty();
             $.each(response.manuals, function (name, val) {
-                manualss.append(' <span id="btnM' + val.id + '" ><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox">X</button></span><br>');
+                manualss.append(' <span id="btnM' + val.id + '" ><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox  btn btn-danger fa fa-times rePadding"></button></span><br>');
             });
         },
         error: function (xhr, status, error) {
@@ -114,18 +114,19 @@ function updateProduct() {
     product.append('model', $("#ModelNumber").val());
     product.append('category', $("#category").val());
     product.append('video', prodNVideos);
-    // Allow to upload several manuals
-    $.each($('#file')[0].files, function (i, file) {
-        product.append('file', file);
+    // Allow to upload several manuals  
+    $("#fileUploadContainer :file").each(function (i, file) {        
+        product.append('file', file.files[0]);
     });
     product.append('removedVideos', videoFinlString);
-    product.append('removedManuals', manualFinlString);
+    product.append('removedManuals', manualFinlString);    
     //Ajax call to the backend API receive products
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/product/update',
         crossOrigin: true,
         cache: false,
+        async: false,
         headers: {
             "Accept": "application/json",
             "Authorization": "Bearer " + window.localStorage.getItem('access_token')
@@ -142,7 +143,7 @@ function updateProduct() {
             });
             return true;
         },
-        error: function (xhr, status, error) {
+        error: function (xhr, status, error) {            
             var jsonResponseText = $.parseJSON(xhr.responseText);
             var count = 0;
             $.each(jsonResponseText, function (name, val) {
@@ -177,7 +178,7 @@ $(function () {
 });
 
 function createDynamicTextBox(value) {
-    return '<div class="input-group form-group"><input class="form-control" placeholder="Paste Video Link here" required name="DynamicTextBox" type="text"><span class="input-group-btn"><button class="btn blue remove" type="button">Remove</button></span></div>'
+    return '<div class="input-group form-group"><input class="form-control" placeholder="Paste Video Link here" required name="DynamicTextBox" type="text"><span class="input-group-btn"><button class="btn btn-warning remove" type="button">X</button></span></div>'
 }
 function GetValue() {
     var Contain = "";
@@ -185,4 +186,13 @@ function GetValue() {
         Contain += $(this).val() + ",";
     });
     $("#pvideo").val(Contain);
+}
+
+$("#nManualbtn").bind("click", function () {
+        var div = $("<div />");
+        div.html(createDynamicFile(""));
+        $("#fileUploadContainer").append(div);
+    });   
+    function createDynamicFile(value) {
+        return '<div class="input-group form-group"><input  required type="file" placeholder="Upload File" /><span class="input-group-btn"><button class="btn btn-warning remove" type="button">X</button></span></div>'
 }
