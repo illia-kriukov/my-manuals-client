@@ -15,6 +15,7 @@ $(document).ready(function () {
         $("#topSearchBar").hide();
         $("#UserEnter").show();
         $("#userPanel").hide();
+        $("#noSignIn").show();
 }else
 {
      var authority = window.localStorage.getItem('authority');
@@ -22,8 +23,6 @@ $(document).ready(function () {
 }
      
    
-  
-
 
 
     if (length > 0) {
@@ -52,6 +51,9 @@ $(document).ready(function () {
             if (window.location.pathname == "/C:/xampp/htdocs/repo/index.html") {
                 window.location.href = "./consumer.html";
             }
+         
+                     $('#repQuestionForm').show();
+              
             $("#homeButton").attr("href", "./consumer.html");
             $("#UserEnter").hide();
             $("#UserExit").show();

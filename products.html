@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -90,7 +90,7 @@
                             </ul>
                         </li>
                       
-                     
+                        <li id="noSignIn" style="display:none;"><a href="" data-toggle="modal" data-target="#modallogin">Sign In</a></li>
                         <li>
                             <a href="#" id="topsearchbutton"> <span class="glyphicon glyphicon-search"></span></a>
                         </li>
@@ -111,7 +111,7 @@
         </nav>
     </header>
 
-   <div class="jumbotron"> 
+   <div class="jumbotron" id="Top"> 
        
        <img class="jumbotronImages" src="assets/images/computer-1.png">
        <p class="centeredParagraph">Here you can browse through all of the <span id="categoryName"></span>products .</p>
@@ -143,11 +143,24 @@
 
     </section>
 
-
+    <!--    Login-->
+    <div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <h1 class="white topText">Welcome back</h1>
+                <form action="" class="popup-form">
+                    <input id="fpUsername" type="text" class="form-control form-white" placeholder="Email Address">
+                    <input id="fpPassword" class="form-control form-white" type="password" placeholder="Password">
+                    <button id="fpSignIN" type="submit" class="btn btn-primary">Enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll-up -->
     <div class="scroll-up">
-        <a href="#home"><i class="fa fa-angle-up"></i></a>
+        <a href="#Top"><i class="fa fa-angle-up"></i></a>
     </div>
 
     <!-- Javascript files -->

@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $('#registerbtn').on('click', function () {
         event.preventDefault();
-        $("#errordivs").empty();
+        $("#consumerErrorsdiv").empty();
         var consumer = {
             email: $email.val(),
             password: $password.val(),
@@ -29,25 +29,29 @@ $(document).ready(function () {
                 "Content-Type": "application/json "
             },
             success: function (data) {
-                console.log(data);
-              $('#modallogin').hide;
-                window.location.href = "index.html";
+               console.log(data);
+                $('#modallogin').hide();
+                $('form :input').val('');
+                iziToast.success({
+                    title: 'OK',
+                    message: 'Consumer Successfully Created!',
+                });
             },
             error: function (xhr, status, error) {
                 var jsonResponseText = $.parseJSON(xhr.responseText);
                 var count = 0;
                 $.each(jsonResponseText, function (name, val) {
                     if (name == "errors") {
-                        $('#errordivs').append('Validation error(s)');
+                        $('#consumerErrorsdiv').append('Validation error(s)');
                         $.each(val, function (index, value) {
                             count++;
-                            $('#errordivs').append('</br> ' + count + '. ' + value);
+                            $('#consumerErrorsdiv').append('</br> ' + count + '. ' + value);
                         });
-                        $("#errordivs").show();
-                        $('#errordivs').delay(5000).fadeOut('slow');
+                        $("#consumerErrorsdiv").show();
+                        $('#consumerErrorsdiv').delay(5000).fadeOut('slow');
                         $(function () {
                             setTimeout(function () {
-                                $("#errordivs").hide('blind', {}, 500)
+                                $("#consumerErrorsdiv").hide('blind', {}, 500)
                             }, 5000);
                         });
                     }

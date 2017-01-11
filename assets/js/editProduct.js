@@ -1,6 +1,5 @@
 ﻿
-$(document).ready(function ($) {
-    var counter = 0;
+$(document).ready(function ($) {    
     var pid = location.search.split('id=')[1];
     $("#upProdId").val(pid);
     var allCategories;
@@ -30,27 +29,15 @@ $(document).ready(function ($) {
         },
         success: function (response) {
             $("#ProductName").val(response.name);
-            $("#ModelNumber").val(response.model);
-            var selectBox = $('.selectpicker').selectpicker();
-            $.each(allCategories, function (id, val) {
-                selectBox.append('<option value="' + val.id + '">' + val.name + '</option>');
-                $('.selectpicker').selectpicker("refresh");
-            });
-            $.each(response.categories, function (name, val) {
-                var fd = $("ul.inner li").eq(val.id - 1);
-                fd.addClass("selected");
-                $("ul li a").attr("aria-selected", true);
-                $("div button.dropdown-toggle").removeClass('bs-placeholder');
-                $(".pull-left").prepend(val.name + ",");
-            });
+            $("#ModelNumber").val(response.model);          
             var videoss = $("#prodVideos").empty();
             $.each(response.videos, function (name, val) {
-                counter++;
-                videoss.append(' <span id="btnV' + val.id + '" ><a title="Manual Video" href="' + val.link + '" target="_blank">' + "Link" +counter+ '</a><a type="button"  title="Remove" onclick="deleteRecord(111,' + val.id + ');" class="closebox btn btn-danger fa fa-times rePadding"></a></span><br>');
-            });
+                var vTitle = getVideoTitle(val.link);                                 
+                videoss.append('<tr id="btnV' + val.id + '"><td><a title="Manual Video"  href="' + val.link + '" target="_blank">' + vTitle + '</a></td><td><button type="button"  title="Remove" onclick="deleteRecord(111,' + val.id + ');" class="closebox btn btn-danger fa fa-times rePadding"></button></td></tr>');
+            });           
             var manualss = $("#prodManuals").empty();
-            $.each(response.manuals, function (name, val) {
-                manualss.append(' <span id="btnM' + val.id + '" ><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox  btn btn-danger fa fa-times rePadding"></button></span><br>');
+            $.each(response.manuals, function (name, val) {                
+                manualss.append(' <tr id="btnM' + val.id + '"><td><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a></td><td><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox  btn btn-danger fa fa-times rePadding"></button></td></tr>');
             });
         },
         error: function (xhr, status, error) {
@@ -61,11 +48,28 @@ $(document).ready(function ($) {
         }
     });
 })
+//get video Title
+function getVideoTitle(vURL) {   
+    var videoId = vURL.split('v=')[1];    
+    var videTitle = '';
+    var ytApiKey = "AIzaSyAYTNW378PUQ9j427giPSRaQLR_-TF-R04";   
+    $.ajax({
+        url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + videoId + '&key=' + ytApiKey,        
+        type: 'GET',
+        dataType: "JSON",
+        cache: false,
+        async: false,
+        success: function (response) {            
+            videTitle = response.items[0].snippet.title;
+        }
+    });
+    return videTitle;
+}
 //Show Manual
 function getManual(id) {
     window.open('http://localhost:8080/manual/' + id);
 }
-//confirmation modal for video and  manual
+//confirmation modal for video and  manual deletion
 function deleteRecord(typId, vId) {
     $("#cModalType").val(typId);
     $("#cModalReId").val(vId);
@@ -87,17 +91,6 @@ $('#confirmdelete').on('click', '.btn-ok', function () {
         $delMid.val($delMid.val() + vId + ',');
     }
 });
-//show new video button or Manual button
-function showNbtn(id) {
-    if (id == 1) {
-        $("#pvideo").show();
-        $("#nVideobtn").hide();
-    }
-    else if (id == 2) {
-        $("#file").show();
-        $("#nManualbtn").hide();
-    }
-}
 function updateProduct() {
     $("#errordivs").empty();
     var videoString = $('#delVideoId').val();

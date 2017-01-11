@@ -5,8 +5,9 @@ $(document).ready(function ($) {
     var url = window.location.href;
     var pid = location.search.split('id=')[1];
     var authority = window.localStorage.getItem('authority');
-
+console.log("This is the script I am testing");
     if (authority == "ROLE_USER") {
+        console.log("This is user");
         //Get subscriptions for product ID
         $.ajax({
             type: 'GET',
@@ -18,6 +19,7 @@ $(document).ready(function ($) {
                 "Authorization": "Bearer " + window.localStorage.getItem('access_token')
             },
             success: function (response) {
+                    console.log(response);
 
                 $.each(response, function (index, value) {
                     console.log(value);
