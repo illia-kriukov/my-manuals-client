@@ -100,7 +100,7 @@ $(document).ready(function () {
 
                         if (response.authority == "ROLE_ADMIN") {
 
-                            window.location.href = "new-product.html";
+                            window.location.href = "representative.html";
                         } else if (response.authority == "ROLE_USER") {
                             window.location.href = "consumer.html";
 

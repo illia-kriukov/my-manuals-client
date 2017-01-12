@@ -33,11 +33,11 @@ $(document).ready(function ($) {
             var videoss = $("#prodVideos").empty();
             $.each(response.videos, function (name, val) {
                 var vTitle = getVideoTitle(val.link);                                 
-                videoss.append('<tr id="btnV' + val.id + '"><td><a title="Manual Video"  href="' + val.link + '" target="_blank">' + vTitle + '</a></td><td><button type="button"  title="Remove" onclick="deleteRecord(111,' + val.id + ');" class="closebox btn btn-danger fa fa-times rePadding"></button></td></tr>');
+                videoss.append('<tr id="btnV' + val.id + '"><td style="text-align:left;"><a title="Manual Video"  href="' + val.link + '" target="_blank">' + vTitle + '</a></td><td style="text-align:right;"><button type="button"  title="Remove" onclick="deleteRecord(111,' + val.id + ');" class="closebox btn btn-danger fa fa-times rePadding"></button></td></tr>');
             });           
             var manualss = $("#prodManuals").empty();
             $.each(response.manuals, function (name, val) {                
-                manualss.append(' <tr id="btnM' + val.id + '"><td><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a></td><td><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox  btn btn-danger fa fa-times rePadding"></button></td></tr>');
+                manualss.append('<tr id="btnM' + val.id + '"><td style="text-align:left;"><a title="Manual" href="#" onclick="getManual(' + val.id + ');">' + val.name + '</a></td><td style="text-align:right;"><button type="button" title="Remove" onclick="deleteRecord(112,' + val.id + ');"   class="closebox  btn btn-danger fa fa-times rePadding"></button></td></tr>');
             });
         },
         error: function (xhr, status, error) {
