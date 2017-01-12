@@ -180,13 +180,12 @@ h6 {
         border-color: #4aa0c2;
     }
 
-/*btn-default*/
+/*btn-default*/  /*color:#fff;*/ /*border: 1px solid #68c3a3;*/
 .btn-default {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
+    background: transparent;   
+    border:1px solid #e8e8e8;
+    color: #68c3a3;  
 }
-
     .btn-default:hover,
     .btn-default:focus,
     .btn-default.focus,
@@ -194,7 +193,7 @@ h6 {
     .btn-default.active {
         color: #68c3a3;
         background-color: #fff;
-        border-color: #fff;
+        border-color: #68c3a3;
     }
 
 
