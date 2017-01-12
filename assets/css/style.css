@@ -2251,8 +2251,10 @@ ul.white-list li {
         top: 70px;
         right: 15px;
         color: #fff;
-        background-color: #428bca;
-        border-color: #357ebd;
+        /*background-color: #428bca;*/
+        /*border-color: #357ebd;*/
+        background-color: #68c3a3;
+        border-color: #68c3a3;
         opacity: 1;
         padding: 10px 17px;
         font-size: 27px;
