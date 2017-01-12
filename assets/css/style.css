@@ -2275,7 +2275,7 @@ ul.white-list li {
 
 #file {
     display: block;
-    margin-left: auto;
+    /*margin-left: auto;*/
     margin-right: auto;
     text-align: center;
 }
@@ -2418,11 +2418,13 @@ table#acrylic {
 }
 
 #TextBoxContainer {
-    margin-top: 25px;
+    margin-top: 20px;
 }
+
 #fileUploadContainer {
-    margin-top: 25px;
+    margin-top: 5px;
 }
+
 .centeredParagraph {
     text-align: center;
     margin-top: 25px;
