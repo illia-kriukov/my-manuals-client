@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -120,122 +120,43 @@
 <section class="section" id="Top">
     <div class="container">
         
-        <div id="myForm" class="col-md-4 col-lg-offset-4">
-        <div style="display:none;" id="errordivs" class="alert alert-danger">
-            <span>  </span>
-        </div>
-        <!-- BEGIN REGISTRATION FORM -->
-        <form class="register-form productbox" id="registform">
-            <div style="margin:2%">
-                <div class="form-group">
-                    <label>Product Name <span style="color:red">*</span></label>
-                    <input id="ProductName" name="ProductName" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Product Name" />
-                </div>
-                <div class="form-group">
-                    <label>Model Number <span style="color:red">*</span></label>
-                    <input id="ModelNumber" name="ModelNumber" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Model Number" />
-                </div>
-                <div class="form-group">
-                    <label>Categories <span style="color:red">*</span></label>
-                    <br>
-                    <select id="category" class="selectpicker" data-width="100%"  multiple data-max-options="3"></select>
-                </div>
-                <div class="form-group">
-                    <label>Video</label>
-                    <input id="video" name="video" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Video Link" />
-                </div>
-                <div class="form-group">
-                    <label>Manual <span style="color:red">*</span></label>
-                    <input id="file" name="file" class="placeholder-no-fix" type="file" required="required" placeholder="Upload File" />
-                </div>
-                <div class="form-actions">
-                    <button type="submit" id="submit-btn-prod" class="btn btn-success btn-block uppercase ">Submit</button>
-                </div>
+        <div id="myForm" class="col-md-6 col-lg-offset-3" >        
+            <div style="display:none;" id="errordivs" class="alert alert-danger">
+                <span>  </span>
             </div>
-        </form>
-        <!-- END REGISTRATION FORM -->
-        <hr>
-    </div>
-<!--
-        
-    <div id="myCarousel" class="carousel" data-ride="carousel" data-interval="false">
-      <div class="carousel-inner">
-        <div class="item active">
-        
-            <div class="board">
-            <h2 class="white topheader">Let's get started</h2>
-               <p class="topparagraph">What is the Product's Name?</p>
-                 <input id="ProductName" name="ProductName" class="form-control placeholder-no-fix topinput" type="text" required="required" placeholder="Product Name">
-            </div>
-            
-           <div class="carousel-caption">
-          </div>
+            <!-- BEGIN REGISTRATION FORM -->
+            <form class="register-form productbox" id="registform">                
+                    <div style="margin: 6% 10% 6% 10%;">
+                    <div class="form-group">
+                        <label>Product Name <span style="color:red">*</span></label>
+                        <input id="ProductName" name="ProductName" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Product Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Model Number <span style="color:red">*</span></label>
+                        <input id="ModelNumber" name="ModelNumber" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Model Number" />
+                    </div>
+                    <div class="form-group">
+                        <label>Categories <span style="color:red">*</span></label>
+                        <br>
+                        <select id="category" class="selectpicker" data-width="100%" multiple data-max-options="3"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Video</label>
+                        <input id="video" name="video" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Video Link" />
+                    </div>
+                    <div class="form-group">
+                        <label>Manual <span style="color:red">*</span></label>
+                        <input id="file" name="file" class="placeholder-no-fix" type="file" required="required" placeholder="Upload File" />
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn-prod" class="btn btn-success btn-block uppercase ">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!-- END REGISTRATION FORM -->
+            <hr>
         </div>
- 
-         <div class="item">
-            <div class="board">
-             
-            <h2 class="white topheader">Very Good</h2>
-               <p class="topparagraph">What is the Model Number?</p>
-                   <input id="ModelNumber" name="ModelNumber" class="form-control placeholder-no-fix topinput" type="text" required="required" placeholder="Model Number" />
-             </div>
-           <div class="carousel-caption">
-
-          </div>
-        </div>
-        
-        <div class="item">
-           <div class="board">
-             <h2 class="white topheader">Doing Great</h2>
-               <p class="topparagraph">Which categories does the item belong to?</p>
-                  <select id="category" class="selectpicker" data-width="100%" multiple data-max-options="3"></select>
-            </div>
-           <div class="carousel-caption">
-          
-           
-          </div>
-        </div>
-        
-        <div class="item">
-          <div class="board">
-              <h2 class="white topheader">Almost There</h2>
-               <p class="topparagraph">You can add a Video Link </p>
-                               <input id="video" name="video" class="form-control placeholder-no-fix topinput" type="text" required="required" placeholder="Video Link" />
-
-            
-            </div>
-           <div class="carousel-caption">
-          </div>
-        </div>
-          
-               <div class="item">
-            <div class="board">
-             
-            <h2 class="white topheader">Finished</h2>
-               <p class="topparagraph">Upload a manual for the product</p>
-               <input id="file" name="file" class="placeholder-no-fix topcentered" type="file" required="required" placeholder="Upload File" />
-                 <button id="repregisterbutton" data-toggle="modal" data-target="#modalrepsignup" class="sun-flower-button topcentered">Register Product</button>
-             </div>
-           <div class="carousel-caption">
-
-          </div>
-        </div>
-                
-      </div>
-
-
-        <ul class="nav nav-pills nav-justified">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Step 1</a></li>
-          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Step 2</a></li>
-          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Step 3</a></li>
-          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Step 4</a></li>
-             <li data-target="#myCarousel" data-slide-to="4"><a href="#">Step 5</a></li>
-        </ul>
-
-
-    </div>
--->
-</div>
+   </div>
     </section>
 
 

@@ -187,5 +187,5 @@ $("#nManualbtn").bind("click", function () {
         $("#fileUploadContainer").append(div);
     });   
     function createDynamicFile(value) {
-        return '<div class="input-group form-group"><input  required type="file" placeholder="Upload File" /><span class="input-group-btn"><button class="btn btn-warning remove" type="button">X</button></span></div>'
+        return '<div class="input-group form-group"><input  required type="file" class="form-control" placeholder="Upload File" /><span class="input-group-btn"><button class="btn btn-warning remove" type="button">X</button></span></div>'
 }

@@ -2420,7 +2420,9 @@ table#acrylic {
 #TextBoxContainer {
     margin-top: 25px;
 }
-
+#fileUploadContainer {
+    margin-top: 25px;
+}
 .centeredParagraph {
     text-align: center;
     margin-top: 25px;
